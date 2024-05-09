@@ -1,0 +1,21 @@
+query GetMatches {
+    matches {
+        id
+        homeTeam {
+            id
+            name
+            goalsScored
+            goalsConceded
+        }
+        homeTeamGoals
+        awayTeam {
+            id
+            name
+            goalsScored
+            goalsConceded
+        }
+        awayTeamGoals
+        startDate
+        ended
+    }
+}

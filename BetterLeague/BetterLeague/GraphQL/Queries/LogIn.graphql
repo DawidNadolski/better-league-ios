@@ -1,0 +1,12 @@
+query LogIn($input: UserLoginInput!) {
+    logIn(input: $input) {
+        id
+        name
+        points
+        bets {
+            id
+            homeTeamGoals
+            awayTeamGoals
+        }
+    }
+}

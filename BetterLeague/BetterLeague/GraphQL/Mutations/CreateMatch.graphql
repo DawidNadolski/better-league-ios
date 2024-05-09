@@ -1,0 +1,5 @@
+mutation CreateMatch($input: MatchInput!) {
+    createMatch(input: $input) {
+        id
+    }
+}
