@@ -32,10 +32,10 @@ extension BetterLeagueAPI {
     static func objectType(forTypename typename: String) -> ApolloAPI.Object? {
       switch typename {
       case "RootMutation": return BetterLeagueAPI.Objects.RootMutation
-      case "User": return BetterLeagueAPI.Objects.User
       case "Bet": return BetterLeagueAPI.Objects.Bet
-      case "Team": return BetterLeagueAPI.Objects.Team
       case "Match": return BetterLeagueAPI.Objects.Match
+      case "Team": return BetterLeagueAPI.Objects.Team
+      case "User": return BetterLeagueAPI.Objects.User
       case "RootQuery": return BetterLeagueAPI.Objects.RootQuery
       default: return nil
       }

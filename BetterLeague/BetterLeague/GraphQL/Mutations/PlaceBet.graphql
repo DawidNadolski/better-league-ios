@@ -1,0 +1,20 @@
+mutation PlaceBet($input: BetInput!) {
+    placeBet(input: $input) {
+        id
+        homeTeamGoals
+        awayTeamGoals
+        match {
+            id
+            homeTeam {
+                name
+            }
+            awayTeam {
+                name
+            }
+        }
+        better {
+            id
+            name
+        }
+    }
+}

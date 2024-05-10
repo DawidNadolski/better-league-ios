@@ -70,6 +70,8 @@ type Bet {
   id: ID!
   homeTeamGoals: Int!
   awayTeamGoals: Int!
+  match: Match!
+  better: User!
 }
 
 type Match {

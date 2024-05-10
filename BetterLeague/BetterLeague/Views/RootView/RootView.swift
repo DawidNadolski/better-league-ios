@@ -22,8 +22,11 @@ struct RootView: View {
             NavigationLink("Matches") {
                 MatchesView()
             }
-            NavigationLink("Team") {
+            NavigationLink("Teams") {
                 TeamsView()
+            }
+            NavigationLink("Bets") {
+                BetsView()
             }
         }
         .padding()

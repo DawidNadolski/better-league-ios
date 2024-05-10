@@ -58,6 +58,14 @@
 		6FE7985B2BEC4FFE00E94108 /* AddTeamView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FE7985A2BEC4FFE00E94108 /* AddTeamView.swift */; };
 		6FE7985D2BEC512B00E94108 /* CreateTeam.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 6FE7985C2BEC512B00E94108 /* CreateTeam.graphql */; };
 		6FE7985F2BEC517600E94108 /* CreateTeamMutation.graphql.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FE7985E2BEC517600E94108 /* CreateTeamMutation.graphql.swift */; };
+		6FE798622BED590D00E94108 /* BetsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FE798612BED590D00E94108 /* BetsView.swift */; };
+		6FE798642BED592500E94108 /* PlaceBetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FE798632BED592500E94108 /* PlaceBetView.swift */; };
+		6FE798662BED594A00E94108 /* BetsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FE798652BED594A00E94108 /* BetsViewModel.swift */; };
+		6FE798682BED595300E94108 /* PlaceBetViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FE798672BED595300E94108 /* PlaceBetViewModel.swift */; };
+		6FE7986A2BED5A3100E94108 /* PlaceBet.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 6FE798692BED5A3100E94108 /* PlaceBet.graphql */; };
+		6FE7986C2BED5A8C00E94108 /* BetInput.graphql.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FE7986B2BED5A8C00E94108 /* BetInput.graphql.swift */; };
+		6FE7986E2BED5A9400E94108 /* PlaceBetMutation.graphql.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FE7986D2BED5A9400E94108 /* PlaceBetMutation.graphql.swift */; };
+		6FE798702BED5DC200E94108 /* Bet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FE7986F2BED5DC200E94108 /* Bet.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -131,6 +139,14 @@
 		6FE7985A2BEC4FFE00E94108 /* AddTeamView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTeamView.swift; sourceTree = "<group>"; };
 		6FE7985C2BEC512B00E94108 /* CreateTeam.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = CreateTeam.graphql; sourceTree = "<group>"; };
 		6FE7985E2BEC517600E94108 /* CreateTeamMutation.graphql.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateTeamMutation.graphql.swift; sourceTree = "<group>"; };
+		6FE798612BED590D00E94108 /* BetsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BetsView.swift; sourceTree = "<group>"; };
+		6FE798632BED592500E94108 /* PlaceBetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceBetView.swift; sourceTree = "<group>"; };
+		6FE798652BED594A00E94108 /* BetsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BetsViewModel.swift; sourceTree = "<group>"; };
+		6FE798672BED595300E94108 /* PlaceBetViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceBetViewModel.swift; sourceTree = "<group>"; };
+		6FE798692BED5A3100E94108 /* PlaceBet.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = PlaceBet.graphql; sourceTree = "<group>"; };
+		6FE7986B2BED5A8C00E94108 /* BetInput.graphql.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BetInput.graphql.swift; sourceTree = "<group>"; };
+		6FE7986D2BED5A9400E94108 /* PlaceBetMutation.graphql.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceBetMutation.graphql.swift; sourceTree = "<group>"; };
+		6FE7986F2BED5DC200E94108 /* Bet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bet.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -238,8 +254,9 @@
 			isa = PBXGroup;
 			children = (
 				6FE7980D2BE816EB00E94108 /* ResponseModels.swift */,
-				6FE798082BE8079300E94108 /* User.swift */,
+				6FE7986F2BED5DC200E94108 /* Bet.swift */,
 				6FE7983F2BEC22D600E94108 /* Match.swift */,
+				6FE798082BE8079300E94108 /* User.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -329,6 +346,7 @@
 		6FE7980F2BE8188800E94108 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				6FE798602BED58FC00E94108 /* Bets */,
 				6FE798532BEC4FDA00E94108 /* Teams */,
 				6FE798412BEC2D1E00E94108 /* Matches */,
 				6FE7981A2BE81E9900E94108 /* RootView */,
@@ -369,6 +387,7 @@
 		6FE7981E2BE983F300E94108 /* Mutations */ = {
 			isa = PBXGroup;
 			children = (
+				6FE7986D2BED5A9400E94108 /* PlaceBetMutation.graphql.swift */,
 				6FE7985E2BEC517600E94108 /* CreateTeamMutation.graphql.swift */,
 				6FE7984F2BEC4C8F00E94108 /* CreateMatchMutation.graphql.swift */,
 				6FE7981D2BE983F300E94108 /* CreateUserMutation.graphql.swift */,
@@ -379,6 +398,7 @@
 		6FE798212BE984EE00E94108 /* InputObjects */ = {
 			isa = PBXGroup;
 			children = (
+				6FE7986B2BED5A8C00E94108 /* BetInput.graphql.swift */,
 				6FE798512BEC4C9900E94108 /* MatchInput.graphql.swift */,
 				6FE798302BEAE3B200E94108 /* UserLoginInput.graphql.swift */,
 				6FE798312BEAE3B200E94108 /* UserSignupInput.graphql.swift */,
@@ -411,6 +431,7 @@
 				6FE7981B2BE97CC300E94108 /* CreateUser.graphql */,
 				6FE7984D2BEC4C2900E94108 /* CreateMatch.graphql */,
 				6FE7985C2BEC512B00E94108 /* CreateTeam.graphql */,
+				6FE798692BED5A3100E94108 /* PlaceBet.graphql */,
 			);
 			path = Mutations;
 			sourceTree = "<group>";
@@ -424,6 +445,17 @@
 				6FE7985A2BEC4FFE00E94108 /* AddTeamView.swift */,
 			);
 			path = Teams;
+			sourceTree = "<group>";
+		};
+		6FE798602BED58FC00E94108 /* Bets */ = {
+			isa = PBXGroup;
+			children = (
+				6FE798612BED590D00E94108 /* BetsView.swift */,
+				6FE798652BED594A00E94108 /* BetsViewModel.swift */,
+				6FE798632BED592500E94108 /* PlaceBetView.swift */,
+				6FE798672BED595300E94108 /* PlaceBetViewModel.swift */,
+			);
+			path = Bets;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -540,6 +572,7 @@
 				6FE7982D2BEAE25E00E94108 /* LogIn.graphql in Resources */,
 				6FE798062BE8069700E94108 /* schema.graphqls in Resources */,
 				6FE7985D2BEC512B00E94108 /* CreateTeam.graphql in Resources */,
+				6FE7986A2BED5A3100E94108 /* PlaceBet.graphql in Resources */,
 				6F8AC6632BE588D400C7CBC2 /* Assets.xcassets in Resources */,
 				6FE7984E2BEC4C2900E94108 /* CreateMatch.graphql in Resources */,
 				6FE798352BEC091D00E94108 /* GetMatches.graphql in Resources */,
@@ -572,15 +605,20 @@
 				6FE798002BE8069700E94108 /* GetUserQuery.graphql.swift in Sources */,
 				6FE798552BEC4FE300E94108 /* TeamsView.swift in Sources */,
 				6FE798502BEC4C8F00E94108 /* CreateMatchMutation.graphql.swift in Sources */,
+				6FE7986E2BED5A9400E94108 /* PlaceBetMutation.graphql.swift in Sources */,
 				6FE798192BE81DE200E94108 /* SignupViewModel.swift in Sources */,
 				6FE7980E2BE816EB00E94108 /* ResponseModels.swift in Sources */,
 				6FE798592BEC4FF500E94108 /* AddTeamViewModel.swift in Sources */,
 				6FE798052BE8069700E94108 /* BetterLeagueAPI.graphql.swift in Sources */,
 				6FE798492BEC3F8000E94108 /* AddMatchView.swift in Sources */,
+				6FE798682BED595300E94108 /* PlaceBetViewModel.swift in Sources */,
+				6FE798622BED590D00E94108 /* BetsView.swift in Sources */,
 				6FE798292BE98BFB00E94108 /* RootQuery.graphql.swift in Sources */,
+				6FE7986C2BED5A8C00E94108 /* BetInput.graphql.swift in Sources */,
 				6FE798572BEC4FEB00E94108 /* TeamsViewModel.swift in Sources */,
 				6FE798522BEC4C9900E94108 /* MatchInput.graphql.swift in Sources */,
 				6F8AC6612BE588D100C7CBC2 /* RootView.swift in Sources */,
+				6FE798662BED594A00E94108 /* BetsViewModel.swift in Sources */,
 				6FE7981F2BE983F300E94108 /* CreateUserMutation.graphql.swift in Sources */,
 				6FE7984B2BEC401100E94108 /* AddMatchViewModel.swift in Sources */,
 				6FE7982B2BE98C0300E94108 /* RootMutation.graphql.swift in Sources */,
@@ -589,9 +627,11 @@
 				6F8AC65F2BE588D100C7CBC2 /* BetterLeagueApp.swift in Sources */,
 				6FE798452BEC2D3100E94108 /* MatchesViewModel.swift in Sources */,
 				6FE798322BEAE3B200E94108 /* UserLoginInput.graphql.swift in Sources */,
+				6FE798702BED5DC200E94108 /* Bet.swift in Sources */,
 				6FE798402BEC22D600E94108 /* Match.swift in Sources */,
 				6FE7983E2BEC0A5F00E94108 /* Date.swift in Sources */,
 				6FE7985B2BEC4FFE00E94108 /* AddTeamView.swift in Sources */,
+				6FE798642BED592500E94108 /* PlaceBetView.swift in Sources */,
 				6FE798142BE818E100E94108 /* LoginViewModel.swift in Sources */,
 				6FE7985F2BEC517600E94108 /* CreateTeamMutation.graphql.swift in Sources */,
 				6F8AC68D2BE5901300C7CBC2 /* APIService.swift in Sources */,
