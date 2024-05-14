@@ -9,8 +9,6 @@ import Foundation
 
 struct Bet {
     let id: String
-    let homeTeamGoals: Int
-    let awayTeamGoals: Int
-    let match: Match
-    let better: User
+    let matchId: String
+    let score: Score
 }

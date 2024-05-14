@@ -16,6 +16,6 @@ query GetMatches {
         }
         awayTeamGoals
         startDate
-        ended
+        hasEnded
     }
 }

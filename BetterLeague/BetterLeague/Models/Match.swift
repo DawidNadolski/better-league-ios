@@ -7,17 +7,37 @@
 
 import Foundation
 
+enum Result {
+    case homeTeamWin
+    case draw
+    case awayTeamWin
+}
+
+struct Score {
+    let homeTeamGoals: Int
+    let awayTeamGoals: Int
+    
+    var result: Result {
+        if homeTeamGoals == awayTeamGoals {
+            return .draw
+        }
+        if homeTeamGoals > awayTeamGoals {
+            return .homeTeamWin
+        }
+        return .awayTeamWin
+    }
+}
+
 struct Match {
     let id: String
     let homeTeam: Team
-    let homeTeamGoals: Int
     let awayTeam: Team
-    let awayTeamGoals: Int
+    let score: Score
     let startDate: Date
     let hasEnded: Bool
 }
 
-struct Team {
+struct Team: Hashable {
     let id: String
     let name: String
     let goalsScored: Int
@@ -29,21 +49,19 @@ extension Match {
         guard let data = responseData else { return nil }
         self.id = data.id
         self.homeTeam = Team(responseData: data.homeTeam)
-        self.homeTeamGoals = data.homeTeamGoals
         self.awayTeam = Team(responseData: data.awayTeam)
-        self.awayTeamGoals = data.awayTeamGoals
+        self.score = .init(homeTeamGoals: data.homeTeamGoals, awayTeamGoals: data.awayTeamGoals)
         //TODO: Get date from string
         self.startDate = Date()
-        self.hasEnded = data.ended ?? false
+        self.hasEnded = data.hasEnded ?? false
     }
     
     init?(responseData: GraphQLCreateMatchResponseData?) {
         guard let data = responseData else { return nil }
         self.id = data.createMatch.id
         self.homeTeam = .mock
-        self.homeTeamGoals = 0
         self.awayTeam = .mock
-        self.awayTeamGoals = 0
+        self.score = .init(homeTeamGoals: 0, awayTeamGoals: 0)
         //TODO: Get date from string
         self.startDate = Date()
         self.hasEnded = false
