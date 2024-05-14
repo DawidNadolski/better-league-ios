@@ -8,7 +8,7 @@ extension BetterLeagueAPI {
     static let operationName: String = "GetMatches"
     static let operationDocument: ApolloAPI.OperationDocument = .init(
       definition: .init(
-        #"query GetMatches { matches { __typename id homeTeam { __typename id name goalsScored goalsConceded } homeTeamGoals awayTeam { __typename id name goalsScored goalsConceded } awayTeamGoals startDate ended } }"#
+        #"query GetMatches { matches { __typename id homeTeam { __typename id name goalsScored goalsConceded } homeTeamGoals awayTeam { __typename id name goalsScored goalsConceded } awayTeamGoals startDate hasEnded } }"#
       ))
 
     public init() {}
@@ -39,8 +39,8 @@ extension BetterLeagueAPI {
           .field("homeTeamGoals", Int.self),
           .field("awayTeam", AwayTeam.self),
           .field("awayTeamGoals", Int.self),
-          .field("startDate", BetterLeagueAPI.Date?.self),
-          .field("ended", Bool?.self),
+          .field("startDate", BetterLeagueAPI.Date.self),
+          .field("hasEnded", Bool.self),
         ] }
 
         var id: BetterLeagueAPI.ID { __data["id"] }
@@ -48,8 +48,8 @@ extension BetterLeagueAPI {
         var homeTeamGoals: Int { __data["homeTeamGoals"] }
         var awayTeam: AwayTeam { __data["awayTeam"] }
         var awayTeamGoals: Int { __data["awayTeamGoals"] }
-        var startDate: BetterLeagueAPI.Date? { __data["startDate"] }
-        var ended: Bool? { __data["ended"] }
+        var startDate: BetterLeagueAPI.Date { __data["startDate"] }
+        var hasEnded: Bool { __data["hasEnded"] }
 
         /// Match.HomeTeam
         ///

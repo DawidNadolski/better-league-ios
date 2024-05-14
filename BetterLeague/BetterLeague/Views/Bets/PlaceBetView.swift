@@ -13,6 +13,8 @@ struct PlaceBetView: View {
     
     var body: some View {
         VStack {
+            TextField("Match ID", text: $viewModel.matchId)
+                .textFieldStyle(.roundedBorder)
             TextField("Home team goals", text: $viewModel.homeTeamGoals)
                 .textFieldStyle(.roundedBorder)
                 .keyboardType(.numberPad)
