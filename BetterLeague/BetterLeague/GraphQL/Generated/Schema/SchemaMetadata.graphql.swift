@@ -37,6 +37,7 @@ extension BetterLeagueAPI {
       case "Team": return BetterLeagueAPI.Objects.Team
       case "User": return BetterLeagueAPI.Objects.User
       case "RootQuery": return BetterLeagueAPI.Objects.RootQuery
+      case "AuthorizationData": return BetterLeagueAPI.Objects.AuthorizationData
       default: return nil
       }
     }

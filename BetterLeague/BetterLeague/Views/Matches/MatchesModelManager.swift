@@ -44,9 +44,10 @@ final class MatchesModelManager: MatchesModelManagerProtocol {
     }
     
     private func fetchMatches() {
-        APIService.shared.apollo.fetch(query: BetterLeagueAPI.GetMatchesQuery()) { [weak self] result in
+        APIService.shared.apolloAuthorized.fetch(query: BetterLeagueAPI.GetMatchesQuery()) { [weak self] result in
             switch result {
             case .success(let graphQLResponse):
+                print(graphQLResponse)
                 guard let data = graphQLResponse.data else { return }
                 let matches = data.matches.compactMap { match -> Match? in
                     guard let matchModel = match else { return nil }
@@ -67,7 +68,7 @@ final class MatchesModelManager: MatchesModelManagerProtocol {
     
     private func fetchBets() {
         let userId = "663eaf479b23e651a88c9a68"
-        APIService.shared.apollo.fetch(query: BetterLeagueAPI.GetUserBetsQuery(userId: userId)) { [weak self] result in
+        APIService.shared.apolloAuthorized.fetch(query: BetterLeagueAPI.GetUserBetsQuery(userId: userId)) { [weak self] result in
             switch result {
             case .success(let graphQLResponse):
                 print(graphQLResponse)

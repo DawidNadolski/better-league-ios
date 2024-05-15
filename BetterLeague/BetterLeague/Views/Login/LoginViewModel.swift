@@ -20,10 +20,13 @@ final class LoginViewModel: ObservableObject {
         APIService.shared.apollo.fetch(query: BetterLeagueAPI.LogInQuery(input: input)) { result in
             switch result {
             case .success(let graphQLResponse):
-                guard let user = User(responseData: graphQLResponse.data) else {
+                guard let data = graphQLResponse.data else {
+                    print("Failed logging in user")
                     return
                 }
-                print(user)
+                let userId = data.logIn.userId
+                let userToken = data.logIn.token
+                UserDefaults.standard.set(userToken, forKey: "userToken")
             case .failure(let error):
                 return
             }

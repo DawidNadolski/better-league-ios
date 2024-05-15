@@ -24,39 +24,13 @@ type RootMutation {
 }
 
 type RootQuery {
-  logIn(input: UserLoginInput!): User!
+  logIn(input: UserLoginInput!): AuthorizationData!
   user: User!
-  bets: [Bet!]!
+  bets(userId: ID!): [Bet!]!
   matches: [Match]!
 }
 
-input BetInput {
-  matchId: ID!
-  homeTeamGoals: Int!
-  awayTeamGoals: Int!
-}
-
-input MatchInput {
-  homeTeamName: String!
-  awayTeamName: String!
-}
-
-input UserSignupInput {
-  name: String!
-  password: String!
-  confirmedPassword: String!
-}
-
-input UserLoginInput {
-  name: String!
-  password: String!
-}
-
 scalar Date
-
-type MyType {
-  created: Date
-}
 
 type User {
   id: ID!
@@ -80,8 +54,8 @@ type Match {
   homeTeamGoals: Int!
   awayTeam: Team!
   awayTeamGoals: Int!
-  startDate: Date
-  ended: Boolean
+  startDate: Date!
+  hasEnded: Boolean!
 }
 
 type Team {
@@ -89,4 +63,31 @@ type Team {
   name: String!
   goalsScored: Int!
   goalsConceded: Int!
+}
+
+type AuthorizationData {
+  token: String!
+  userId: String!
+}
+
+input BetInput {
+  matchId: ID!
+  homeTeamGoals: Int!
+  awayTeamGoals: Int!
+}
+
+input MatchInput {
+  homeTeamName: String!
+  awayTeamName: String!
+}
+
+input UserSignupInput {
+  name: String!
+  password: String!
+  confirmedPassword: String!
+}
+
+input UserLoginInput {
+  name: String!
+  password: String!
 }

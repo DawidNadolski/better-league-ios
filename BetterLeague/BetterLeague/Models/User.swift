@@ -30,8 +30,6 @@ extension User {
     
     init?(responseData: GraphQLLoginResponseData?) {
         guard let data = responseData else { return nil }
-        self.id = data.logIn.id
-        self.bets = data.logIn.bets?.compactMap { _ in "" } ?? []
-        self.name = data.logIn.name
+        return nil
     }
 }

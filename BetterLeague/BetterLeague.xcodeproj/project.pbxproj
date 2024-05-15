@@ -19,6 +19,7 @@
 		6F8AC6912BE5961D00C7CBC2 /* Apollo in Frameworks */ = {isa = PBXBuildFile; productRef = 6F8AC6902BE5961D00C7CBC2 /* Apollo */; };
 		6FC413762BF171BA00E1E9A5 /* UserBet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FC413752BF171BA00E1E9A5 /* UserBet.swift */; };
 		6FC413782BF1730900E1E9A5 /* UserBetTile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FC413772BF1730900E1E9A5 /* UserBetTile.swift */; };
+		6FC4137A2BF426A800E1E9A5 /* AuthorizationData.graphql.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FC413792BF426A800E1E9A5 /* AuthorizationData.graphql.swift */; };
 		6FE798002BE8069700E94108 /* GetUserQuery.graphql.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FE797F12BE8069700E94108 /* GetUserQuery.graphql.swift */; };
 		6FE798022BE8069700E94108 /* User.graphql.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FE797F52BE8069700E94108 /* User.graphql.swift */; };
 		6FE798032BE8069700E94108 /* SchemaConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FE797F72BE8069700E94108 /* SchemaConfiguration.swift */; };
@@ -105,6 +106,7 @@
 		6F8AC68C2BE5901300C7CBC2 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		6FC413752BF171BA00E1E9A5 /* UserBet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserBet.swift; sourceTree = "<group>"; };
 		6FC413772BF1730900E1E9A5 /* UserBetTile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserBetTile.swift; sourceTree = "<group>"; };
+		6FC413792BF426A800E1E9A5 /* AuthorizationData.graphql.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthorizationData.graphql.swift; sourceTree = "<group>"; };
 		6FE797F12BE8069700E94108 /* GetUserQuery.graphql.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetUserQuery.graphql.swift; sourceTree = "<group>"; };
 		6FE797F52BE8069700E94108 /* User.graphql.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.graphql.swift; sourceTree = "<group>"; };
 		6FE797F72BE8069700E94108 /* SchemaConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SchemaConfiguration.swift; sourceTree = "<group>"; };
@@ -302,6 +304,7 @@
 		6FE797F62BE8069700E94108 /* Objects */ = {
 			isa = PBXGroup;
 			children = (
+				6FC413792BF426A800E1E9A5 /* AuthorizationData.graphql.swift */,
 				6FE798382BEC0A3C00E94108 /* Match.graphql.swift */,
 				6FE798392BEC0A3C00E94108 /* Team.graphql.swift */,
 				6FE7982A2BE98C0300E94108 /* RootMutation.graphql.swift */,
@@ -618,6 +621,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6FC4137A2BF426A800E1E9A5 /* AuthorizationData.graphql.swift in Sources */,
 				6FC413782BF1730900E1E9A5 /* UserBetTile.swift in Sources */,
 				6FE798002BE8069700E94108 /* GetUserQuery.graphql.swift in Sources */,
 				6FE798552BEC4FE300E94108 /* TeamsView.swift in Sources */,

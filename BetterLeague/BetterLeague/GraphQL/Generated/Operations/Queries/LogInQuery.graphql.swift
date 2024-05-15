@@ -8,7 +8,7 @@ extension BetterLeagueAPI {
     static let operationName: String = "LogIn"
     static let operationDocument: ApolloAPI.OperationDocument = .init(
       definition: .init(
-        #"query LogIn($input: UserLoginInput!) { logIn(input: $input) { __typename id name points bets { __typename id homeTeamGoals awayTeamGoals } } }"#
+        #"query LogIn($input: UserLoginInput!) { logIn(input: $input) { __typename token userId } }"#
       ))
 
     public var input: UserLoginInput
@@ -32,44 +32,20 @@ extension BetterLeagueAPI {
 
       /// LogIn
       ///
-      /// Parent Type: `User`
+      /// Parent Type: `AuthorizationData`
       struct LogIn: BetterLeagueAPI.SelectionSet {
         let __data: DataDict
         init(_dataDict: DataDict) { __data = _dataDict }
 
-        static var __parentType: ApolloAPI.ParentType { BetterLeagueAPI.Objects.User }
+        static var __parentType: ApolloAPI.ParentType { BetterLeagueAPI.Objects.AuthorizationData }
         static var __selections: [ApolloAPI.Selection] { [
           .field("__typename", String.self),
-          .field("id", BetterLeagueAPI.ID.self),
-          .field("name", String.self),
-          .field("points", Int.self),
-          .field("bets", [Bet?]?.self),
+          .field("token", String.self),
+          .field("userId", String.self),
         ] }
 
-        var id: BetterLeagueAPI.ID { __data["id"] }
-        var name: String { __data["name"] }
-        var points: Int { __data["points"] }
-        var bets: [Bet?]? { __data["bets"] }
-
-        /// LogIn.Bet
-        ///
-        /// Parent Type: `Bet`
-        struct Bet: BetterLeagueAPI.SelectionSet {
-          let __data: DataDict
-          init(_dataDict: DataDict) { __data = _dataDict }
-
-          static var __parentType: ApolloAPI.ParentType { BetterLeagueAPI.Objects.Bet }
-          static var __selections: [ApolloAPI.Selection] { [
-            .field("__typename", String.self),
-            .field("id", BetterLeagueAPI.ID.self),
-            .field("homeTeamGoals", Int.self),
-            .field("awayTeamGoals", Int.self),
-          ] }
-
-          var id: BetterLeagueAPI.ID { __data["id"] }
-          var homeTeamGoals: Int { __data["homeTeamGoals"] }
-          var awayTeamGoals: Int { __data["awayTeamGoals"] }
-        }
+        var token: String { __data["token"] }
+        var userId: String { __data["userId"] }
       }
     }
   }

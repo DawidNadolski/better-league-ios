@@ -72,7 +72,7 @@ final class MatchesViewModel: ObservableObject {
     
     func betButtonTapped(with matchId: String) {
         let input = BetterLeagueAPI.BetInput(matchId: matchId, homeTeamGoals: Int(homeTeamGoals) ?? 20, awayTeamGoals: Int(awayTeamGoals) ?? 20)
-        APIService.shared.apollo.perform(mutation: BetterLeagueAPI.PlaceBetMutation(input: input)) { result in
+        APIService.shared.apolloAuthorized.perform(mutation: BetterLeagueAPI.PlaceBetMutation(input: input)) { result in
             switch result {
             case .success(let graphQLResponse):
                 print(graphQLResponse)
