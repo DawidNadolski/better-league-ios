@@ -79,6 +79,7 @@ input BetInput {
 input MatchInput {
   homeTeamName: String!
   awayTeamName: String!
+  date: Date!
 }
 
 input UserSignupInput {

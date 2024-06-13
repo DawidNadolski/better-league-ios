@@ -17,6 +17,8 @@ struct AddMatchView: View {
                 .textFieldStyle(.roundedBorder)
             TextField("Away team name", text: $viewModel.awayTeamName)
                 .textFieldStyle(.roundedBorder)
+            DatePicker("Date", selection: $viewModel.date)
+                .environment(\.timeZone, TimeZone(secondsFromGMT: 2*60*60)!)
             Button {
                 viewModel.addMatch()
             } label: {

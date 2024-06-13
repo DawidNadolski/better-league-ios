@@ -13,11 +13,13 @@ extension BetterLeagueAPI {
 
     init(
       homeTeamName: String,
-      awayTeamName: String
+      awayTeamName: String,
+      date: Date
     ) {
       __data = InputDict([
         "homeTeamName": homeTeamName,
-        "awayTeamName": awayTeamName
+        "awayTeamName": awayTeamName,
+        "date": date
       ])
     }
 
@@ -29,6 +31,11 @@ extension BetterLeagueAPI {
     var awayTeamName: String {
       get { __data["awayTeamName"] }
       set { __data["awayTeamName"] = newValue }
+    }
+
+    var date: Date {
+      get { __data["date"] }
+      set { __data["date"] = newValue }
     }
   }
 
