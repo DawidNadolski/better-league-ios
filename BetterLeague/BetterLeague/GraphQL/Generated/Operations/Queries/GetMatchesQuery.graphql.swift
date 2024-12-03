@@ -8,7 +8,7 @@ extension BetterLeagueAPI {
     static let operationName: String = "GetMatches"
     static let operationDocument: ApolloAPI.OperationDocument = .init(
       definition: .init(
-        #"query GetMatches { matches { __typename id homeTeam { __typename id name goalsScored goalsConceded } homeTeamGoals awayTeam { __typename id name goalsScored goalsConceded } awayTeamGoals startDate hasEnded } }"#
+        #"query GetMatches { matches { __typename id homeTeam { __typename id name } homeTeamGoals awayTeam { __typename id name } awayTeamGoals startDate hasEnded } }"#
       ))
 
     public init() {}
@@ -63,14 +63,10 @@ extension BetterLeagueAPI {
             .field("__typename", String.self),
             .field("id", BetterLeagueAPI.ID.self),
             .field("name", String.self),
-            .field("goalsScored", Int.self),
-            .field("goalsConceded", Int.self),
           ] }
 
           var id: BetterLeagueAPI.ID { __data["id"] }
           var name: String { __data["name"] }
-          var goalsScored: Int { __data["goalsScored"] }
-          var goalsConceded: Int { __data["goalsConceded"] }
         }
 
         /// Match.AwayTeam
@@ -85,14 +81,10 @@ extension BetterLeagueAPI {
             .field("__typename", String.self),
             .field("id", BetterLeagueAPI.ID.self),
             .field("name", String.self),
-            .field("goalsScored", Int.self),
-            .field("goalsConceded", Int.self),
           ] }
 
           var id: BetterLeagueAPI.ID { __data["id"] }
           var name: String { __data["name"] }
-          var goalsScored: Int { __data["goalsScored"] }
-          var goalsConceded: Int { __data["goalsConceded"] }
         }
       }
     }

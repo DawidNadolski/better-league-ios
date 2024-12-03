@@ -1,0 +1,23 @@
+query GetUsers {
+    users {
+        id
+        name
+        bets {
+            id
+            match {
+                homeTeam {
+                    name
+                }
+                awayTeam {
+                    name
+                }
+            }
+            homeTeamGoals
+            awayTeamGoals
+        }
+        winningTeam {
+            id
+            name
+        }
+    }
+}

@@ -4,20 +4,20 @@
 @_exported import ApolloAPI
 
 extension BetterLeagueAPI {
-  class CreateTeamMutation: GraphQLMutation {
-    static let operationName: String = "CreateTeam"
+  class UpdateUserPasswordMutation: GraphQLMutation {
+    static let operationName: String = "UpdateUserPassword"
     static let operationDocument: ApolloAPI.OperationDocument = .init(
       definition: .init(
-        #"mutation CreateTeam($teamName: String!) { createTeam(teamName: $teamName) { __typename id name goalsScored goalsConceded } }"#
+        #"mutation UpdateUserPassword($input: UserLoginInput!) { updateUserPassword(input: $input) { __typename id name password } }"#
       ))
 
-    public var teamName: String
+    public var input: UserLoginInput
 
-    public init(teamName: String) {
-      self.teamName = teamName
+    public init(input: UserLoginInput) {
+      self.input = input
     }
 
-    public var __variables: Variables? { ["teamName": teamName] }
+    public var __variables: Variables? { ["input": input] }
 
     struct Data: BetterLeagueAPI.SelectionSet {
       let __data: DataDict
@@ -25,31 +25,29 @@ extension BetterLeagueAPI {
 
       static var __parentType: ApolloAPI.ParentType { BetterLeagueAPI.Objects.RootMutation }
       static var __selections: [ApolloAPI.Selection] { [
-        .field("createTeam", CreateTeam.self, arguments: ["teamName": .variable("teamName")]),
+        .field("updateUserPassword", UpdateUserPassword.self, arguments: ["input": .variable("input")]),
       ] }
 
-      var createTeam: CreateTeam { __data["createTeam"] }
+      var updateUserPassword: UpdateUserPassword { __data["updateUserPassword"] }
 
-      /// CreateTeam
+      /// UpdateUserPassword
       ///
-      /// Parent Type: `Team`
-      struct CreateTeam: BetterLeagueAPI.SelectionSet {
+      /// Parent Type: `User`
+      struct UpdateUserPassword: BetterLeagueAPI.SelectionSet {
         let __data: DataDict
         init(_dataDict: DataDict) { __data = _dataDict }
 
-        static var __parentType: ApolloAPI.ParentType { BetterLeagueAPI.Objects.Team }
+        static var __parentType: ApolloAPI.ParentType { BetterLeagueAPI.Objects.User }
         static var __selections: [ApolloAPI.Selection] { [
           .field("__typename", String.self),
           .field("id", BetterLeagueAPI.ID.self),
           .field("name", String.self),
-          .field("goalsScored", Int.self),
-          .field("goalsConceded", Int.self),
+          .field("password", String?.self),
         ] }
 
         var id: BetterLeagueAPI.ID { __data["id"] }
         var name: String { __data["name"] }
-        var goalsScored: Int { __data["goalsScored"] }
-        var goalsConceded: Int { __data["goalsConceded"] }
+        var password: String? { __data["password"] }
       }
     }
   }

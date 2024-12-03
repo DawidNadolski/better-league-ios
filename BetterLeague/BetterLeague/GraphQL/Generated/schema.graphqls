@@ -19,15 +19,19 @@ directive @import(
 type RootMutation {
   createUser(input: UserSignupInput!): User!
   createMatch(input: MatchInput!): Match!
-  createTeam(teamName: String): Team!
   placeBet(input: BetInput!): Bet!
+  updateUserTeam(teamId: ID!): User!
+  endMatch(matchId: ID!): Match!
+  updateUserPassword(input: UserLoginInput!): User!
 }
 
 type RootQuery {
   logIn(input: UserLoginInput!): AuthorizationData!
-  user: User!
-  bets(userId: ID!): [Bet!]!
+  getUser(userId: ID!): UserData!
+  users: [UserData!]!
+  userBets(userId: ID!): [Bet!]!
   matches: [Match]!
+  teams: [Team!]!
 }
 
 scalar Date
@@ -38,6 +42,14 @@ type User {
   password: String
   points: Int!
   bets: [Bet]
+  winningTeam: Team
+}
+
+type UserData {
+  id: ID!
+  name: String!
+  bets: [Bet]
+  winningTeam: Team
 }
 
 type Bet {
@@ -45,6 +57,8 @@ type Bet {
   homeTeamGoals: Int!
   awayTeamGoals: Int!
   match: Match!
+  isResolved: Boolean!
+  points: Int!
   better: User!
 }
 
@@ -56,13 +70,15 @@ type Match {
   awayTeamGoals: Int!
   startDate: Date!
   hasEnded: Boolean!
+  stage: String!
 }
 
 type Team {
   id: ID!
   name: String!
-  goalsScored: Int!
-  goalsConceded: Int!
+  group: String!
+  isPlaying: Boolean!
+  didWin: Boolean!
 }
 
 type AuthorizationData {
@@ -79,6 +95,7 @@ input BetInput {
 input MatchInput {
   homeTeamName: String!
   awayTeamName: String!
+  stage: String!
   date: Date!
 }
 
