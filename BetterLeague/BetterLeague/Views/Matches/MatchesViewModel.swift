@@ -66,7 +66,6 @@ struct UserBetDisplayData: Identifiable {
     var unbetMatchesCount: Int = 0
     
     private let dependencies: Dependencies
-    private let modelManager = MatchesModelManager()
     
     init(dependencies: Dependencies) {
         self.dependencies = dependencies

@@ -14,13 +14,6 @@ struct User {
 }
 
 extension User {
-    init?(responseData: GraphQLGetUserResponseData?) {
-        guard let data = responseData else { return nil }
-        self.id = data.user.id
-        self.name = data.user.name
-        self.bets = []
-    }
-    
     init?(responseData: GraphQLCreateUserResponseData?) {
         guard let data = responseData else { return nil }
         self.id = data.createUser.id
