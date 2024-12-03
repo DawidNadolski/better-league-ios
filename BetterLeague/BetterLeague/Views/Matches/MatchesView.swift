@@ -9,37 +9,64 @@ import SwiftUI
 
 struct MatchesView: View {
     
-    @ObservedObject var viewModel: MatchesViewModel
+    var viewModel: MatchesViewModel
     
-    init(viewModel: MatchesViewModel = MatchesViewModel()) {
+    init(viewModel: MatchesViewModel) {
         self.viewModel = viewModel
     }
     
     var body: some View {
         VStack(spacing: 16.0) {
             List {
-                ForEach(viewModel.userBets) { userBet in
-                    UserBetTile(displayData: userBet) { matchId in
-                        viewModel.betButtonTapped(with: matchId)
+                ForEach(viewModel.userBets.map(\.match)) { match in
+                    HStack(spacing: 0.0) {
+                        ZStack {
+                            Color.red
+                            Text("FT")
+                                .frame(alignment: .center)
+                        }
+                        .frame(width: 64.0)
+                        
+                        ZStack {
+                            Color.green
+                            VStack(alignment: .center, spacing: 2.0) {
+                                Text("\(match.score.homeTeamGoals)")
+                                    .frame(alignment: .center)
+                                Text("\(match.score.awayTeamGoals)")
+                                    .frame(alignment: .center)
+                            }
+                        }
+                        .frame(width: 32.0)
+                        
+                        ZStack {
+                            Color.black.opacity(0.1)
+                            VStack(alignment: .center, spacing: 2.0) {
+                                HStack {
+                                    Text(match.homeTeam.name)
+                                    Spacer()
+                                }
+                                HStack {
+                                    Text(match.awayTeam.name)
+                                    Spacer()
+                                }
+                            }
+                            .padding(.leading, 8.0)
+                        }
                     }
+                    .frame(height: 64.0)
+                    .listRowSeparator(.hidden)
+                    .listRowInsets(EdgeInsets())
                 }
-            }
-            TextField("Home team goals", text: $viewModel.homeTeamGoals)
-                .textFieldStyle(.roundedBorder)
-                .keyboardType(.numberPad)
-            TextField("Away team goals", text: $viewModel.awayTeamGoals)
-                .textFieldStyle(.roundedBorder)
-                .keyboardType(.numberPad)
-            NavigationLink("Add match") {
-                AddMatchView()
             }
         }
         .onAppear {
             viewModel.onAppear()
         }
+        .navigationTitle("Matches")
+        .navigationBarTitleDisplayMode(.inline)
     }
 }
 
 #Preview {
-    MatchesView()
+    MatchesView(viewModel: .init(dependencies: .init(getUserBetsUseCase: { [] })))
 }
