@@ -14,8 +14,11 @@ struct RootView: View {
     var body: some View {
         TabView {
             Tab("Matches", systemImage: "soccerball") {
-                EmptyView()
+                NavigationView {
+                    MatchesView(viewModel: viewModel.matchesViewModel)
+                }
             }
+            .badge(viewModel.matchesViewModel.unbetMatchesCount)
             
             Tab("Ranking", systemImage: "list.number") {
                 EmptyView()

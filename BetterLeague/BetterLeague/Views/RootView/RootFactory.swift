@@ -6,7 +6,22 @@
 //
 
 protocol RootFactoryProtocol {
+    func makeMatchesViewModel() -> MatchesViewModel
 }
 
 final class RootFactory: RootFactoryProtocol {
+    
+    private let matchesUseCaseProvider: MatchesUseCaseProviderProtocol
+    
+    init(matchesUseCaseProvider: MatchesUseCaseProviderProtocol = MatchesUseCaseProvider()) {
+        self.matchesUseCaseProvider = matchesUseCaseProvider
+    }
+    
+    func makeMatchesViewModel() -> MatchesViewModel {
+        MatchesViewModel(
+            dependencies: .init(
+                getUserBetsUseCase: matchesUseCaseProvider.getUserBetsUseCase
+            )
+        )
+    }
 }
