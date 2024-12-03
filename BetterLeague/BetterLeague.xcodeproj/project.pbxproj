@@ -7,6 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6F14D9852CFF74120009F119 /* GraphQLClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F14D9842CFF740F0009F119 /* GraphQLClient.swift */; };
+		6F14D9892CFFA4D30009F119 /* MatchesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F14D9882CFFA4CF0009F119 /* MatchesService.swift */; };
+		6F14D98B2CFFC8590009F119 /* MatchesUseCaseProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F14D98A2CFFC8550009F119 /* MatchesUseCaseProvider.swift */; };
+		6F14D98D2CFFC8A30009F119 /* RootFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F14D98C2CFFC89F0009F119 /* RootFactory.swift */; };
+		6F14D9902CFFCE030009F119 /* UserBetDisplayDataTransformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F14D98F2CFFCDF80009F119 /* UserBetDisplayDataTransformer.swift */; };
+		6F532B502C1A732B00BEC529 /* GetTeams.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 6F532B4F2C1A732B00BEC529 /* GetTeams.graphql */; };
+		6F532B522C1A75ED00BEC529 /* GetTeamsQuery.graphql.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F532B512C1A75ED00BEC529 /* GetTeamsQuery.graphql.swift */; };
+		6F532B592C1BA9C700BEC529 /* GetUsersQuery.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 6F532B582C1BA9C700BEC529 /* GetUsersQuery.graphql */; };
+		6F532B5B2C1BAAA800BEC529 /* GetUsersQuery.graphql.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F532B5A2C1BAAA800BEC529 /* GetUsersQuery.graphql.swift */; };
+		6F532B5F2C1BAEBB00BEC529 /* UserData.graphql.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F532B5E2C1BAEBB00BEC529 /* UserData.graphql.swift */; };
+		6F532B612C21A9F700BEC529 /* UpdateUserPassword.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 6F532B602C21A9F700BEC529 /* UpdateUserPassword.graphql */; };
+		6F532B632C21ABC000BEC529 /* UpdateUserPasswordMutation.graphql.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F532B622C21ABC000BEC529 /* UpdateUserPasswordMutation.graphql.swift */; };
 		6F8AC65F2BE588D100C7CBC2 /* BetterLeagueApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F8AC65E2BE588D100C7CBC2 /* BetterLeagueApp.swift */; };
 		6F8AC6612BE588D100C7CBC2 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F8AC6602BE588D100C7CBC2 /* RootView.swift */; };
 		6F8AC6632BE588D400C7CBC2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6F8AC6622BE588D400C7CBC2 /* Assets.xcassets */; };
@@ -18,15 +30,12 @@
 		6F8AC68D2BE5901300C7CBC2 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F8AC68C2BE5901300C7CBC2 /* APIService.swift */; };
 		6F8AC6912BE5961D00C7CBC2 /* Apollo in Frameworks */ = {isa = PBXBuildFile; productRef = 6F8AC6902BE5961D00C7CBC2 /* Apollo */; };
 		6FC413762BF171BA00E1E9A5 /* UserBet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FC413752BF171BA00E1E9A5 /* UserBet.swift */; };
-		6FC413782BF1730900E1E9A5 /* UserBetTile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FC413772BF1730900E1E9A5 /* UserBetTile.swift */; };
 		6FC4137A2BF426A800E1E9A5 /* AuthorizationData.graphql.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FC413792BF426A800E1E9A5 /* AuthorizationData.graphql.swift */; };
-		6FE798002BE8069700E94108 /* GetUserQuery.graphql.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FE797F12BE8069700E94108 /* GetUserQuery.graphql.swift */; };
 		6FE798022BE8069700E94108 /* User.graphql.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FE797F52BE8069700E94108 /* User.graphql.swift */; };
 		6FE798032BE8069700E94108 /* SchemaConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FE797F72BE8069700E94108 /* SchemaConfiguration.swift */; };
 		6FE798042BE8069700E94108 /* SchemaMetadata.graphql.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FE797F82BE8069700E94108 /* SchemaMetadata.graphql.swift */; };
 		6FE798052BE8069700E94108 /* BetterLeagueAPI.graphql.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FE797FA2BE8069700E94108 /* BetterLeagueAPI.graphql.swift */; };
 		6FE798062BE8069700E94108 /* schema.graphqls in Resources */ = {isa = PBXBuildFile; fileRef = 6FE797FB2BE8069700E94108 /* schema.graphqls */; };
-		6FE798072BE8069700E94108 /* GetUser.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 6FE797FD2BE8069700E94108 /* GetUser.graphql */; };
 		6FE798092BE8079300E94108 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FE798082BE8079300E94108 /* User.swift */; };
 		6FE7980E2BE816EB00E94108 /* ResponseModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FE7980D2BE816EB00E94108 /* ResponseModels.swift */; };
 		6FE798122BE818D300E94108 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FE798112BE818D300E94108 /* LoginView.swift */; };
@@ -50,17 +59,9 @@
 		6FE798402BEC22D600E94108 /* Match.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FE7983F2BEC22D600E94108 /* Match.swift */; };
 		6FE798432BEC2D2800E94108 /* MatchesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FE798422BEC2D2800E94108 /* MatchesView.swift */; };
 		6FE798452BEC2D3100E94108 /* MatchesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FE798442BEC2D3100E94108 /* MatchesViewModel.swift */; };
-		6FE798492BEC3F8000E94108 /* AddMatchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FE798482BEC3F8000E94108 /* AddMatchView.swift */; };
-		6FE7984B2BEC401100E94108 /* AddMatchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FE7984A2BEC401100E94108 /* AddMatchViewModel.swift */; };
 		6FE7984E2BEC4C2900E94108 /* CreateMatch.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 6FE7984D2BEC4C2900E94108 /* CreateMatch.graphql */; };
 		6FE798502BEC4C8F00E94108 /* CreateMatchMutation.graphql.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FE7984F2BEC4C8F00E94108 /* CreateMatchMutation.graphql.swift */; };
 		6FE798522BEC4C9900E94108 /* MatchInput.graphql.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FE798512BEC4C9900E94108 /* MatchInput.graphql.swift */; };
-		6FE798552BEC4FE300E94108 /* TeamsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FE798542BEC4FE300E94108 /* TeamsView.swift */; };
-		6FE798572BEC4FEB00E94108 /* TeamsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FE798562BEC4FEB00E94108 /* TeamsViewModel.swift */; };
-		6FE798592BEC4FF500E94108 /* AddTeamViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FE798582BEC4FF500E94108 /* AddTeamViewModel.swift */; };
-		6FE7985B2BEC4FFE00E94108 /* AddTeamView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FE7985A2BEC4FFE00E94108 /* AddTeamView.swift */; };
-		6FE7985D2BEC512B00E94108 /* CreateTeam.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 6FE7985C2BEC512B00E94108 /* CreateTeam.graphql */; };
-		6FE7985F2BEC517600E94108 /* CreateTeamMutation.graphql.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FE7985E2BEC517600E94108 /* CreateTeamMutation.graphql.swift */; };
 		6FE798622BED590D00E94108 /* BetsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FE798612BED590D00E94108 /* BetsView.swift */; };
 		6FE798642BED592500E94108 /* PlaceBetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FE798632BED592500E94108 /* PlaceBetView.swift */; };
 		6FE798662BED594A00E94108 /* BetsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FE798652BED594A00E94108 /* BetsViewModel.swift */; };
@@ -69,9 +70,6 @@
 		6FE7986C2BED5A8C00E94108 /* BetInput.graphql.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FE7986B2BED5A8C00E94108 /* BetInput.graphql.swift */; };
 		6FE7986E2BED5A9400E94108 /* PlaceBetMutation.graphql.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FE7986D2BED5A9400E94108 /* PlaceBetMutation.graphql.swift */; };
 		6FE798702BED5DC200E94108 /* Bet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FE7986F2BED5DC200E94108 /* Bet.swift */; };
-		6FE798722BEED9CE00E94108 /* MatchesModelManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FE798712BEED9CE00E94108 /* MatchesModelManager.swift */; };
-		6FE798742BEEE60C00E94108 /* GetUserBets.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 6FE798732BEEE60C00E94108 /* GetUserBets.graphql */; };
-		6FE798762BEEE69C00E94108 /* GetUserBetsQuery.graphql.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FE798752BEEE69C00E94108 /* GetUserBetsQuery.graphql.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -92,6 +90,18 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6F14D9842CFF740F0009F119 /* GraphQLClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphQLClient.swift; sourceTree = "<group>"; };
+		6F14D9882CFFA4CF0009F119 /* MatchesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchesService.swift; sourceTree = "<group>"; };
+		6F14D98A2CFFC8550009F119 /* MatchesUseCaseProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchesUseCaseProvider.swift; sourceTree = "<group>"; };
+		6F14D98C2CFFC89F0009F119 /* RootFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootFactory.swift; sourceTree = "<group>"; };
+		6F14D98F2CFFCDF80009F119 /* UserBetDisplayDataTransformer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserBetDisplayDataTransformer.swift; sourceTree = "<group>"; };
+		6F532B4F2C1A732B00BEC529 /* GetTeams.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = GetTeams.graphql; sourceTree = "<group>"; };
+		6F532B512C1A75ED00BEC529 /* GetTeamsQuery.graphql.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetTeamsQuery.graphql.swift; sourceTree = "<group>"; };
+		6F532B582C1BA9C700BEC529 /* GetUsersQuery.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = GetUsersQuery.graphql; sourceTree = "<group>"; };
+		6F532B5A2C1BAAA800BEC529 /* GetUsersQuery.graphql.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetUsersQuery.graphql.swift; sourceTree = "<group>"; };
+		6F532B5E2C1BAEBB00BEC529 /* UserData.graphql.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserData.graphql.swift; sourceTree = "<group>"; };
+		6F532B602C21A9F700BEC529 /* UpdateUserPassword.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = UpdateUserPassword.graphql; sourceTree = "<group>"; };
+		6F532B622C21ABC000BEC529 /* UpdateUserPasswordMutation.graphql.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpdateUserPasswordMutation.graphql.swift; sourceTree = "<group>"; };
 		6F8AC65B2BE588D100C7CBC2 /* BetterLeague.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BetterLeague.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6F8AC65E2BE588D100C7CBC2 /* BetterLeagueApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BetterLeagueApp.swift; sourceTree = "<group>"; };
 		6F8AC6602BE588D100C7CBC2 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
@@ -105,15 +115,12 @@
 		6F8AC6892BE58FC300C7CBC2 /* RootViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewModel.swift; sourceTree = "<group>"; };
 		6F8AC68C2BE5901300C7CBC2 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		6FC413752BF171BA00E1E9A5 /* UserBet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserBet.swift; sourceTree = "<group>"; };
-		6FC413772BF1730900E1E9A5 /* UserBetTile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserBetTile.swift; sourceTree = "<group>"; };
 		6FC413792BF426A800E1E9A5 /* AuthorizationData.graphql.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthorizationData.graphql.swift; sourceTree = "<group>"; };
-		6FE797F12BE8069700E94108 /* GetUserQuery.graphql.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetUserQuery.graphql.swift; sourceTree = "<group>"; };
 		6FE797F52BE8069700E94108 /* User.graphql.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.graphql.swift; sourceTree = "<group>"; };
 		6FE797F72BE8069700E94108 /* SchemaConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SchemaConfiguration.swift; sourceTree = "<group>"; };
 		6FE797F82BE8069700E94108 /* SchemaMetadata.graphql.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SchemaMetadata.graphql.swift; sourceTree = "<group>"; };
 		6FE797FA2BE8069700E94108 /* BetterLeagueAPI.graphql.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BetterLeagueAPI.graphql.swift; sourceTree = "<group>"; };
 		6FE797FB2BE8069700E94108 /* schema.graphqls */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = schema.graphqls; sourceTree = "<group>"; };
-		6FE797FD2BE8069700E94108 /* GetUser.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = GetUser.graphql; sourceTree = "<group>"; };
 		6FE798082BE8079300E94108 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		6FE7980D2BE816EB00E94108 /* ResponseModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseModels.swift; sourceTree = "<group>"; };
 		6FE798112BE818D300E94108 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
@@ -137,17 +144,9 @@
 		6FE7983F2BEC22D600E94108 /* Match.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Match.swift; sourceTree = "<group>"; };
 		6FE798422BEC2D2800E94108 /* MatchesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchesView.swift; sourceTree = "<group>"; };
 		6FE798442BEC2D3100E94108 /* MatchesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchesViewModel.swift; sourceTree = "<group>"; };
-		6FE798482BEC3F8000E94108 /* AddMatchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMatchView.swift; sourceTree = "<group>"; };
-		6FE7984A2BEC401100E94108 /* AddMatchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMatchViewModel.swift; sourceTree = "<group>"; };
 		6FE7984D2BEC4C2900E94108 /* CreateMatch.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = CreateMatch.graphql; sourceTree = "<group>"; };
 		6FE7984F2BEC4C8F00E94108 /* CreateMatchMutation.graphql.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateMatchMutation.graphql.swift; sourceTree = "<group>"; };
 		6FE798512BEC4C9900E94108 /* MatchInput.graphql.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatchInput.graphql.swift; sourceTree = "<group>"; };
-		6FE798542BEC4FE300E94108 /* TeamsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamsView.swift; sourceTree = "<group>"; };
-		6FE798562BEC4FEB00E94108 /* TeamsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamsViewModel.swift; sourceTree = "<group>"; };
-		6FE798582BEC4FF500E94108 /* AddTeamViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTeamViewModel.swift; sourceTree = "<group>"; };
-		6FE7985A2BEC4FFE00E94108 /* AddTeamView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTeamView.swift; sourceTree = "<group>"; };
-		6FE7985C2BEC512B00E94108 /* CreateTeam.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = CreateTeam.graphql; sourceTree = "<group>"; };
-		6FE7985E2BEC517600E94108 /* CreateTeamMutation.graphql.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateTeamMutation.graphql.swift; sourceTree = "<group>"; };
 		6FE798612BED590D00E94108 /* BetsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BetsView.swift; sourceTree = "<group>"; };
 		6FE798632BED592500E94108 /* PlaceBetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceBetView.swift; sourceTree = "<group>"; };
 		6FE798652BED594A00E94108 /* BetsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BetsViewModel.swift; sourceTree = "<group>"; };
@@ -156,9 +155,6 @@
 		6FE7986B2BED5A8C00E94108 /* BetInput.graphql.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BetInput.graphql.swift; sourceTree = "<group>"; };
 		6FE7986D2BED5A9400E94108 /* PlaceBetMutation.graphql.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceBetMutation.graphql.swift; sourceTree = "<group>"; };
 		6FE7986F2BED5DC200E94108 /* Bet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bet.swift; sourceTree = "<group>"; };
-		6FE798712BEED9CE00E94108 /* MatchesModelManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchesModelManager.swift; sourceTree = "<group>"; };
-		6FE798732BEEE60C00E94108 /* GetUserBets.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = GetUserBets.graphql; sourceTree = "<group>"; };
-		6FE798752BEEE69C00E94108 /* GetUserBetsQuery.graphql.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetUserBetsQuery.graphql.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -187,6 +183,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6F14D98E2CFFCDEC0009F119 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				6F14D98F2CFFCDF80009F119 /* UserBetDisplayDataTransformer.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
 		6F8AC6522BE588D100C7CBC2 = {
 			isa = PBXGroup;
 			children = (
@@ -213,7 +217,8 @@
 			children = (
 				6FE797FF2BE8069700E94108 /* GraphQL */,
 				6F8AC68E2BE5918200C7CBC2 /* Models */,
-				6F8AC68B2BE5900200C7CBC2 /* Service */,
+				6F8AC68B2BE5900200C7CBC2 /* Networking */,
+				6F14D98E2CFFCDEC0009F119 /* Utilities */,
 				6FE7980F2BE8188800E94108 /* Views */,
 				6F8AC65E2BE588D100C7CBC2 /* BetterLeagueApp.swift */,
 				6F8AC6622BE588D400C7CBC2 /* Assets.xcassets */,
@@ -247,19 +252,13 @@
 			path = BetterLeagueUITests;
 			sourceTree = "<group>";
 		};
-		6F8AC6882BE58F0100C7CBC2 /* ControlsView */ = {
+		6F8AC68B2BE5900200C7CBC2 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
-			);
-			path = ControlsView;
-			sourceTree = "<group>";
-		};
-		6F8AC68B2BE5900200C7CBC2 /* Service */ = {
-			isa = PBXGroup;
-			children = (
+				6F14D9842CFF740F0009F119 /* GraphQLClient.swift */,
 				6F8AC68C2BE5901300C7CBC2 /* APIService.swift */,
 			);
-			path = Service;
+			path = Networking;
 			sourceTree = "<group>";
 		};
 		6F8AC68E2BE5918200C7CBC2 /* Models */ = {
@@ -284,10 +283,10 @@
 		6FE797F22BE8069700E94108 /* Queries */ = {
 			isa = PBXGroup;
 			children = (
-				6FE798752BEEE69C00E94108 /* GetUserBetsQuery.graphql.swift */,
+				6F532B5A2C1BAAA800BEC529 /* GetUsersQuery.graphql.swift */,
+				6F532B512C1A75ED00BEC529 /* GetTeamsQuery.graphql.swift */,
 				6FE798362BEC09E600E94108 /* GetMatchesQuery.graphql.swift */,
 				6FE7982E2BEAE30800E94108 /* LogInQuery.graphql.swift */,
-				6FE797F12BE8069700E94108 /* GetUserQuery.graphql.swift */,
 			);
 			path = Queries;
 			sourceTree = "<group>";
@@ -304,6 +303,7 @@
 		6FE797F62BE8069700E94108 /* Objects */ = {
 			isa = PBXGroup;
 			children = (
+				6F532B5E2C1BAEBB00BEC529 /* UserData.graphql.swift */,
 				6FC413792BF426A800E1E9A5 /* AuthorizationData.graphql.swift */,
 				6FE798382BEC0A3C00E94108 /* Match.graphql.swift */,
 				6FE798392BEC0A3C00E94108 /* Team.graphql.swift */,
@@ -341,10 +341,10 @@
 		6FE797FE2BE8069700E94108 /* Queries */ = {
 			isa = PBXGroup;
 			children = (
-				6FE797FD2BE8069700E94108 /* GetUser.graphql */,
 				6FE7982C2BEAE25E00E94108 /* LogIn.graphql */,
 				6FE798342BEC091D00E94108 /* GetMatches.graphql */,
-				6FE798732BEEE60C00E94108 /* GetUserBets.graphql */,
+				6F532B4F2C1A732B00BEC529 /* GetTeams.graphql */,
+				6F532B582C1BA9C700BEC529 /* GetUsersQuery.graphql */,
 			);
 			path = Queries;
 			sourceTree = "<group>";
@@ -363,12 +363,10 @@
 			isa = PBXGroup;
 			children = (
 				6FE798602BED58FC00E94108 /* Bets */,
-				6FE798532BEC4FDA00E94108 /* Teams */,
 				6FE798412BEC2D1E00E94108 /* Matches */,
 				6FE7981A2BE81E9900E94108 /* RootView */,
 				6FE798152BE81DC200E94108 /* Signup */,
 				6FE798102BE818C100E94108 /* Login */,
-				6F8AC6882BE58F0100C7CBC2 /* ControlsView */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -394,6 +392,7 @@
 		6FE7981A2BE81E9900E94108 /* RootView */ = {
 			isa = PBXGroup;
 			children = (
+				6F14D98C2CFFC89F0009F119 /* RootFactory.swift */,
 				6F8AC6602BE588D100C7CBC2 /* RootView.swift */,
 				6F8AC6892BE58FC300C7CBC2 /* RootViewModel.swift */,
 			);
@@ -403,8 +402,8 @@
 		6FE7981E2BE983F300E94108 /* Mutations */ = {
 			isa = PBXGroup;
 			children = (
+				6F532B622C21ABC000BEC529 /* UpdateUserPasswordMutation.graphql.swift */,
 				6FE7986D2BED5A9400E94108 /* PlaceBetMutation.graphql.swift */,
-				6FE7985E2BEC517600E94108 /* CreateTeamMutation.graphql.swift */,
 				6FE7984F2BEC4C8F00E94108 /* CreateMatchMutation.graphql.swift */,
 				6FE7981D2BE983F300E94108 /* CreateUserMutation.graphql.swift */,
 			);
@@ -433,12 +432,10 @@
 		6FE798412BEC2D1E00E94108 /* Matches */ = {
 			isa = PBXGroup;
 			children = (
+				6F14D98A2CFFC8550009F119 /* MatchesUseCaseProvider.swift */,
+				6F14D9882CFFA4CF0009F119 /* MatchesService.swift */,
 				6FE798422BEC2D2800E94108 /* MatchesView.swift */,
 				6FE798442BEC2D3100E94108 /* MatchesViewModel.swift */,
-				6FE798482BEC3F8000E94108 /* AddMatchView.swift */,
-				6FE7984A2BEC401100E94108 /* AddMatchViewModel.swift */,
-				6FE798712BEED9CE00E94108 /* MatchesModelManager.swift */,
-				6FC413772BF1730900E1E9A5 /* UserBetTile.swift */,
 			);
 			path = Matches;
 			sourceTree = "<group>";
@@ -448,21 +445,10 @@
 			children = (
 				6FE7981B2BE97CC300E94108 /* CreateUser.graphql */,
 				6FE7984D2BEC4C2900E94108 /* CreateMatch.graphql */,
-				6FE7985C2BEC512B00E94108 /* CreateTeam.graphql */,
 				6FE798692BED5A3100E94108 /* PlaceBet.graphql */,
+				6F532B602C21A9F700BEC529 /* UpdateUserPassword.graphql */,
 			);
 			path = Mutations;
-			sourceTree = "<group>";
-		};
-		6FE798532BEC4FDA00E94108 /* Teams */ = {
-			isa = PBXGroup;
-			children = (
-				6FE798542BEC4FE300E94108 /* TeamsView.swift */,
-				6FE798562BEC4FEB00E94108 /* TeamsViewModel.swift */,
-				6FE798582BEC4FF500E94108 /* AddTeamViewModel.swift */,
-				6FE7985A2BEC4FFE00E94108 /* AddTeamView.swift */,
-			);
-			path = Teams;
 			sourceTree = "<group>";
 		};
 		6FE798602BED58FC00E94108 /* Bets */ = {
@@ -589,13 +575,13 @@
 				6F8AC6662BE588D400C7CBC2 /* Preview Assets.xcassets in Resources */,
 				6FE7982D2BEAE25E00E94108 /* LogIn.graphql in Resources */,
 				6FE798062BE8069700E94108 /* schema.graphqls in Resources */,
-				6FE7985D2BEC512B00E94108 /* CreateTeam.graphql in Resources */,
+				6F532B502C1A732B00BEC529 /* GetTeams.graphql in Resources */,
+				6F532B612C21A9F700BEC529 /* UpdateUserPassword.graphql in Resources */,
+				6F532B592C1BA9C700BEC529 /* GetUsersQuery.graphql in Resources */,
 				6FE7986A2BED5A3100E94108 /* PlaceBet.graphql in Resources */,
 				6F8AC6632BE588D400C7CBC2 /* Assets.xcassets in Resources */,
 				6FE7984E2BEC4C2900E94108 /* CreateMatch.graphql in Resources */,
 				6FE798352BEC091D00E94108 /* GetMatches.graphql in Resources */,
-				6FE798742BEEE60C00E94108 /* GetUserBets.graphql in Resources */,
-				6FE798072BE8069700E94108 /* GetUser.graphql in Resources */,
 				6FE7981C2BE97CC300E94108 /* CreateUser.graphql in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -622,52 +608,50 @@
 			buildActionMask = 2147483647;
 			files = (
 				6FC4137A2BF426A800E1E9A5 /* AuthorizationData.graphql.swift in Sources */,
-				6FC413782BF1730900E1E9A5 /* UserBetTile.swift in Sources */,
-				6FE798002BE8069700E94108 /* GetUserQuery.graphql.swift in Sources */,
-				6FE798552BEC4FE300E94108 /* TeamsView.swift in Sources */,
+				6F14D9902CFFCE030009F119 /* UserBetDisplayDataTransformer.swift in Sources */,
 				6FE798502BEC4C8F00E94108 /* CreateMatchMutation.graphql.swift in Sources */,
 				6FE7986E2BED5A9400E94108 /* PlaceBetMutation.graphql.swift in Sources */,
 				6FE798192BE81DE200E94108 /* SignupViewModel.swift in Sources */,
 				6FE7980E2BE816EB00E94108 /* ResponseModels.swift in Sources */,
-				6FE798592BEC4FF500E94108 /* AddTeamViewModel.swift in Sources */,
 				6FE798052BE8069700E94108 /* BetterLeagueAPI.graphql.swift in Sources */,
-				6FE798492BEC3F8000E94108 /* AddMatchView.swift in Sources */,
+				6F532B5F2C1BAEBB00BEC529 /* UserData.graphql.swift in Sources */,
 				6FE798682BED595300E94108 /* PlaceBetViewModel.swift in Sources */,
 				6FE798622BED590D00E94108 /* BetsView.swift in Sources */,
 				6FE798292BE98BFB00E94108 /* RootQuery.graphql.swift in Sources */,
 				6FE7986C2BED5A8C00E94108 /* BetInput.graphql.swift in Sources */,
-				6FE798722BEED9CE00E94108 /* MatchesModelManager.swift in Sources */,
-				6FE798572BEC4FEB00E94108 /* TeamsViewModel.swift in Sources */,
+				6F532B632C21ABC000BEC529 /* UpdateUserPasswordMutation.graphql.swift in Sources */,
 				6FE798522BEC4C9900E94108 /* MatchInput.graphql.swift in Sources */,
 				6F8AC6612BE588D100C7CBC2 /* RootView.swift in Sources */,
 				6FE798662BED594A00E94108 /* BetsViewModel.swift in Sources */,
 				6FE7981F2BE983F300E94108 /* CreateUserMutation.graphql.swift in Sources */,
-				6FE7984B2BEC401100E94108 /* AddMatchViewModel.swift in Sources */,
 				6FE7982B2BE98C0300E94108 /* RootMutation.graphql.swift in Sources */,
 				6FE798432BEC2D2800E94108 /* MatchesView.swift in Sources */,
+				6F14D98B2CFFC8590009F119 /* MatchesUseCaseProvider.swift in Sources */,
 				6FE7983A2BEC0A3C00E94108 /* Match.graphql.swift in Sources */,
 				6F8AC65F2BE588D100C7CBC2 /* BetterLeagueApp.swift in Sources */,
 				6FE798452BEC2D3100E94108 /* MatchesViewModel.swift in Sources */,
 				6FE798322BEAE3B200E94108 /* UserLoginInput.graphql.swift in Sources */,
-				6FE798762BEEE69C00E94108 /* GetUserBetsQuery.graphql.swift in Sources */,
 				6FE798702BED5DC200E94108 /* Bet.swift in Sources */,
 				6FE798402BEC22D600E94108 /* Match.swift in Sources */,
 				6FE7983E2BEC0A5F00E94108 /* Date.swift in Sources */,
-				6FE7985B2BEC4FFE00E94108 /* AddTeamView.swift in Sources */,
 				6FE798642BED592500E94108 /* PlaceBetView.swift in Sources */,
 				6FE798142BE818E100E94108 /* LoginViewModel.swift in Sources */,
-				6FE7985F2BEC517600E94108 /* CreateTeamMutation.graphql.swift in Sources */,
 				6FC413762BF171BA00E1E9A5 /* UserBet.swift in Sources */,
 				6F8AC68D2BE5901300C7CBC2 /* APIService.swift in Sources */,
+				6F532B522C1A75ED00BEC529 /* GetTeamsQuery.graphql.swift in Sources */,
 				6FE798032BE8069700E94108 /* SchemaConfiguration.swift in Sources */,
 				6FE798372BEC09E600E94108 /* GetMatchesQuery.graphql.swift in Sources */,
+				6F532B5B2C1BAAA800BEC529 /* GetUsersQuery.graphql.swift in Sources */,
 				6FE798172BE81DCC00E94108 /* SignupView.swift in Sources */,
 				6FE798252BE9888800E94108 /* Bet.graphql.swift in Sources */,
 				6FE798022BE8069700E94108 /* User.graphql.swift in Sources */,
 				6FE7983B2BEC0A3C00E94108 /* Team.graphql.swift in Sources */,
 				6FE798332BEAE3B200E94108 /* UserSignupInput.graphql.swift in Sources */,
 				6FE798042BE8069700E94108 /* SchemaMetadata.graphql.swift in Sources */,
+				6F14D9892CFFA4D30009F119 /* MatchesService.swift in Sources */,
 				6FE7982F2BEAE30800E94108 /* LogInQuery.graphql.swift in Sources */,
+				6F14D98D2CFFC8A30009F119 /* RootFactory.swift in Sources */,
+				6F14D9852CFF74120009F119 /* GraphQLClient.swift in Sources */,
 				6FE798122BE818D300E94108 /* LoginView.swift in Sources */,
 				6F8AC68A2BE58FC300C7CBC2 /* RootViewModel.swift in Sources */,
 				6FE798092BE8079300E94108 /* User.swift in Sources */,
@@ -842,6 +826,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -871,6 +856,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
