@@ -12,24 +12,19 @@ struct RootView: View {
     let viewModel = RootViewModel()
     
     var body: some View {
-        VStack(spacing: 12.0) {
-            NavigationLink("Log in") {
-                LoginView()
+        TabView {
+            Tab("Matches", systemImage: "soccerball") {
+                EmptyView()
             }
-            NavigationLink("Sign up") {
-                SignupView()
+            
+            Tab("Ranking", systemImage: "list.number") {
+                EmptyView()
             }
-            NavigationLink("Matches") {
-                MatchesView()
-            }
-            NavigationLink("Teams") {
-                TeamsView()
-            }
-            NavigationLink("Bets") {
-                BetsView()
+            
+            Tab("Profile", systemImage: "person") {
+                EmptyView()
             }
         }
-        .padding()
     }
 }
 
