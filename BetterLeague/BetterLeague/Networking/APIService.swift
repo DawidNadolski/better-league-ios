@@ -13,19 +13,18 @@ class APIService {
     
     private init() {}
     
-    private(set) lazy var apollo = ApolloClient(url: URL(string: "http://localhost:8080/graphql")!)
+    private(set) lazy var apollo = ApolloClient(url: URL(string: "https://better-league-service.onrender.com/graphql")!)
     
     var apolloAuthorized: ApolloClient = {
         let configuration = URLSessionConfiguration.default
-        let token = UserDefaults.standard.value(forKey: "userToken") as! String
-        print(token)
-        let url = URL(string: "http://localhost:8080/graphql")!
+        let token = UserDefaults.standard.value(forKey: "userToken") as? String
+        let url = URL(string: "https://better-league-service.onrender.com/graphql")!
         let store = ApolloStore()
         let provider = DefaultInterceptorProvider(store: store)
         let networkTransport = RequestChainNetworkTransport(
             interceptorProvider: provider,
             endpointURL: url,
-            additionalHeaders: ["Authorization":"\(token)"]
+            additionalHeaders: ["Authorization":"\(token ?? "")"]
         )
         
         return ApolloClient(networkTransport: networkTransport, store: store)
