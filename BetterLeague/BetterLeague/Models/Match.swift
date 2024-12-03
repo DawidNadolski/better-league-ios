@@ -28,7 +28,7 @@ struct Score {
     }
 }
 
-struct Match {
+struct Match: Identifiable {
     let id: String
     let homeTeam: Team
     let awayTeam: Team
@@ -40,8 +40,6 @@ struct Match {
 struct Team: Hashable {
     let id: String
     let name: String
-    let goalsScored: Int
-    let goalsConceded: Int
 }
 
 extension Match {
@@ -72,16 +70,12 @@ extension Team {
     init(responseData: BetterLeagueAPI.GetMatchesQuery.Data.Match.HomeTeam) {
         self.id = responseData.id
         self.name = responseData.name
-        self.goalsScored = responseData.goalsScored
-        self.goalsConceded = responseData.goalsConceded
     }
     
     init(responseData: BetterLeagueAPI.GetMatchesQuery.Data.Match.AwayTeam) {
         self.id = responseData.id
         self.name = responseData.name
-        self.goalsScored = responseData.goalsScored
-        self.goalsConceded = responseData.goalsConceded
     }
     
-    static let mock = Team(id: "1", name: "Poland", goalsScored: 0, goalsConceded: 0)
+    static let mock = Team(id: "1", name: "Poland")
 }
