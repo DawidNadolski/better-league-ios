@@ -7,7 +7,9 @@
 
 import Foundation
 
-struct UserBet {
+struct UserBet: Identifiable {
+    var id: String { bet?.id ?? match.id }
+    
     let match: Match
     let bet: Bet?
     

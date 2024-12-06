@@ -8,48 +8,47 @@
 import Foundation
 
 struct UserBetDisplayDataTransformer {
-    func transform(_ userBets: [UserBet]) -> [UserBetDisplayData] {
-        userBets
-            .sorted(by: { $0.match.startDate < $1.match.startDate })
-            .map { userBet in
-                guard let bet = userBet.bet else {
-                    return transformUnbetMatch(userBet)
-                }
-                let state = getState(userBet)
-                print(userBet)
-                
-                return UserBetDisplayData(
-                    id: userBet.match.id,
-                    homeTeamName: userBet.match.homeTeam.name,
-                    homeTeamGoals: "\(userBet.match.score.homeTeamGoals)",
-                    betHomeTeamGoals: "\(bet.score.homeTeamGoals)",
-                    awayTeamName: userBet.match.awayTeam.name,
-                    awayTeamGoals: "\(userBet.match.score.awayTeamGoals)",
-                    betAwayTeamGoals: "\(bet.score.awayTeamGoals)",
-                    isBet: userBet.isBet,
-                    state: state
-                )
-            }
+    func transform(_ userBet: UserBet) -> MatchListRowDisplayData {
+        guard let bet = userBet.bet else {
+            return transformUnbetMatch(userBet)
+        }
+        let state = getState(userBet)
+        let timeStatus = getTimeStatus(userBet)
+        
+        return MatchListRowDisplayData(
+            id: userBet.match.id,
+            matchTimeStatus: timeStatus,
+            homeTeamName: userBet.match.homeTeam.name,
+            homeTeamGoals: state == .upcoming ? "-" : "\(userBet.match.score.homeTeamGoals)",
+            betHomeTeamGoals: "\(bet.score.homeTeamGoals)",
+            awayTeamName: userBet.match.awayTeam.name,
+            awayTeamGoals: state == .upcoming ? "-" : "\(userBet.match.score.awayTeamGoals)",
+            betAwayTeamGoals: "\(bet.score.awayTeamGoals)",
+            isBet: userBet.isBet,
+            state: state
+        )
     }
     
-    private func transformUnbetMatch(_ userBet: UserBet) -> UserBetDisplayData {
-        UserBetDisplayData(
+    private func transformUnbetMatch(_ userBet: UserBet) -> MatchListRowDisplayData {
+        let timeStatus = getTimeStatus(userBet)
+        return MatchListRowDisplayData(
             id: userBet.match.id,
+            matchTimeStatus: timeStatus,
             homeTeamName: userBet.match.homeTeam.name,
             homeTeamGoals: "\(userBet.match.score.homeTeamGoals)",
-            betHomeTeamGoals: "",
+            betHomeTeamGoals: "-",
             awayTeamName: userBet.match.awayTeam.name,
             awayTeamGoals: "\(userBet.match.score.awayTeamGoals)",
-            betAwayTeamGoals: "",
+            betAwayTeamGoals: "-",
             isBet: userBet.isBet,
             state: getState(userBet)
         )
     }
 
-    private func getState(_ userBet: UserBet) -> UserBetDisplayData.State {
+    private func getState(_ userBet: UserBet) -> MatchListRowDisplayData.State {
         let currentDate = Date()
         if userBet.match.startDate > currentDate {
-            return .notStarted
+            return .upcoming
         }
         
         let result = getResult(userBet)
@@ -73,5 +72,18 @@ struct UserBetDisplayDataTransformer {
         }
         
         return .wrong
+    }
+    
+    private func getTimeStatus(_ userBet: UserBet) -> String {
+        let state = getState(userBet)
+        let day = userBet.match.startDate.formatted(date: .numeric, time: .omitted)
+        switch state {
+        case .upcoming:
+            return day
+        case .live:
+            return "Live"
+        case .ended:
+            return "FT"
+        }
     }
 }
