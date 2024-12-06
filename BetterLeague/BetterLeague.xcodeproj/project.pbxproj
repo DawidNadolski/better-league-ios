@@ -12,6 +12,9 @@
 		6F14D98B2CFFC8590009F119 /* MatchesUseCaseProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F14D98A2CFFC8550009F119 /* MatchesUseCaseProvider.swift */; };
 		6F14D98D2CFFC8A30009F119 /* RootFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F14D98C2CFFC89F0009F119 /* RootFactory.swift */; };
 		6F14D9902CFFCE030009F119 /* UserBetDisplayDataTransformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F14D98F2CFFCDF80009F119 /* UserBetDisplayDataTransformer.swift */; };
+		6F14D9922D0230820009F119 /* MatchListRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F14D9912D02304F0009F119 /* MatchListRow.swift */; };
+		6F14D9942D0273210009F119 /* BetResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F14D9932D02731E0009F119 /* BetResult.swift */; };
+		6F14D9962D038FB40009F119 /* MatchListRowDisplayData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F14D9952D038FA80009F119 /* MatchListRowDisplayData.swift */; };
 		6F532B502C1A732B00BEC529 /* GetTeams.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 6F532B4F2C1A732B00BEC529 /* GetTeams.graphql */; };
 		6F532B522C1A75ED00BEC529 /* GetTeamsQuery.graphql.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F532B512C1A75ED00BEC529 /* GetTeamsQuery.graphql.swift */; };
 		6F532B592C1BA9C700BEC529 /* GetUsersQuery.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 6F532B582C1BA9C700BEC529 /* GetUsersQuery.graphql */; };
@@ -95,6 +98,9 @@
 		6F14D98A2CFFC8550009F119 /* MatchesUseCaseProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchesUseCaseProvider.swift; sourceTree = "<group>"; };
 		6F14D98C2CFFC89F0009F119 /* RootFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootFactory.swift; sourceTree = "<group>"; };
 		6F14D98F2CFFCDF80009F119 /* UserBetDisplayDataTransformer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserBetDisplayDataTransformer.swift; sourceTree = "<group>"; };
+		6F14D9912D02304F0009F119 /* MatchListRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchListRow.swift; sourceTree = "<group>"; };
+		6F14D9932D02731E0009F119 /* BetResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BetResult.swift; sourceTree = "<group>"; };
+		6F14D9952D038FA80009F119 /* MatchListRowDisplayData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchListRowDisplayData.swift; sourceTree = "<group>"; };
 		6F532B4F2C1A732B00BEC529 /* GetTeams.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = GetTeams.graphql; sourceTree = "<group>"; };
 		6F532B512C1A75ED00BEC529 /* GetTeamsQuery.graphql.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetTeamsQuery.graphql.swift; sourceTree = "<group>"; };
 		6F532B582C1BA9C700BEC529 /* GetUsersQuery.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = GetUsersQuery.graphql; sourceTree = "<group>"; };
@@ -264,6 +270,7 @@
 		6F8AC68E2BE5918200C7CBC2 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				6F14D9932D02731E0009F119 /* BetResult.swift */,
 				6FE7980D2BE816EB00E94108 /* ResponseModels.swift */,
 				6FE7986F2BED5DC200E94108 /* Bet.swift */,
 				6FE7983F2BEC22D600E94108 /* Match.swift */,
@@ -432,6 +439,8 @@
 		6FE798412BEC2D1E00E94108 /* Matches */ = {
 			isa = PBXGroup;
 			children = (
+				6F14D9952D038FA80009F119 /* MatchListRowDisplayData.swift */,
+				6F14D9912D02304F0009F119 /* MatchListRow.swift */,
 				6F14D98A2CFFC8550009F119 /* MatchesUseCaseProvider.swift */,
 				6F14D9882CFFA4CF0009F119 /* MatchesService.swift */,
 				6FE798422BEC2D2800E94108 /* MatchesView.swift */,
@@ -624,6 +633,7 @@
 				6F8AC6612BE588D100C7CBC2 /* RootView.swift in Sources */,
 				6FE798662BED594A00E94108 /* BetsViewModel.swift in Sources */,
 				6FE7981F2BE983F300E94108 /* CreateUserMutation.graphql.swift in Sources */,
+				6F14D9962D038FB40009F119 /* MatchListRowDisplayData.swift in Sources */,
 				6FE7982B2BE98C0300E94108 /* RootMutation.graphql.swift in Sources */,
 				6FE798432BEC2D2800E94108 /* MatchesView.swift in Sources */,
 				6F14D98B2CFFC8590009F119 /* MatchesUseCaseProvider.swift in Sources */,
@@ -641,6 +651,7 @@
 				6F532B522C1A75ED00BEC529 /* GetTeamsQuery.graphql.swift in Sources */,
 				6FE798032BE8069700E94108 /* SchemaConfiguration.swift in Sources */,
 				6FE798372BEC09E600E94108 /* GetMatchesQuery.graphql.swift in Sources */,
+				6F14D9922D0230820009F119 /* MatchListRow.swift in Sources */,
 				6F532B5B2C1BAAA800BEC529 /* GetUsersQuery.graphql.swift in Sources */,
 				6FE798172BE81DCC00E94108 /* SignupView.swift in Sources */,
 				6FE798252BE9888800E94108 /* Bet.graphql.swift in Sources */,
@@ -654,6 +665,7 @@
 				6F14D9852CFF74120009F119 /* GraphQLClient.swift in Sources */,
 				6FE798122BE818D300E94108 /* LoginView.swift in Sources */,
 				6F8AC68A2BE58FC300C7CBC2 /* RootViewModel.swift in Sources */,
+				6F14D9942D0273210009F119 /* BetResult.swift in Sources */,
 				6FE798092BE8079300E94108 /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
