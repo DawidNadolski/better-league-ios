@@ -20,7 +20,8 @@ final class RootFactory: RootFactoryProtocol {
     func makeMatchesViewModel() -> MatchesViewModel {
         MatchesViewModel(
             dependencies: .init(
-                getUserBetsUseCase: matchesUseCaseProvider.getUserBetsUseCase
+                getUserBetsUseCase: matchesUseCaseProvider.getUserBetsUseCase,
+                transformUserBetUseCase: matchesUseCaseProvider.transformUserBetUseCase()
             )
         )
     }
