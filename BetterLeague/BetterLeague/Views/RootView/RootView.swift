@@ -15,7 +15,8 @@ struct RootView: View {
         TabView {
             Tab("Matches", systemImage: "soccerball") {
                 NavigationView {
-                    MatchesView(viewModel: viewModel.matchesViewModel)
+                    MatchesView()
+                        .environment(viewModel.matchesViewModel)
                 }
             }
             .badge(viewModel.matchesViewModel.unbetMatchesCount)

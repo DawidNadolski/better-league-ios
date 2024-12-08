@@ -7,7 +7,6 @@
 
 protocol MatchesUseCaseProviderProtocol {
     func getUserBetsUseCase() async throws -> [UserBet]
-    func transformUserBetUseCase() -> (UserBet) -> (MatchListRowDisplayData)
 }
 
 final class MatchesUseCaseProvider: MatchesUseCaseProviderProtocol {
@@ -25,10 +24,5 @@ final class MatchesUseCaseProvider: MatchesUseCaseProviderProtocol {
             let userBet = bets.first(where: { $0.matchId == match.id })
             return UserBet(match: match, bet: userBet)
         }
-    }
-    
-    func transformUserBetUseCase() -> ((UserBet) -> MatchListRowDisplayData) {
-        let transformer = UserBetDisplayDataTransformer()
-        return transformer.transform
     }
 }

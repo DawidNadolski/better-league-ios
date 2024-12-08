@@ -11,27 +11,30 @@ import SwiftUI
     
     struct Dependencies {
         let getUserBetsUseCase: () async throws -> [UserBet]
-        let transformUserBetUseCase: (UserBet) -> MatchListRowDisplayData
     }
     
-    var userBetsDisplayData: [MatchListRowDisplayData] = []
     var unbetMatchesCount: Int = 0
+    var userBets = [UserBet]()
     
     private let dependencies: Dependencies
-    private var userBets = [UserBet]()
+    private let matchesFactory: MatchesFactoryProtocol
     
-    init(dependencies: Dependencies) {
+    init(dependencies: Dependencies, matchesFactory: MatchesFactoryProtocol = MatchesFactory()) {
         self.dependencies = dependencies
+        self.matchesFactory = matchesFactory
     }
     
     func onAppear() {
         fetchData()
     }
     
+    func makeMatchListRowViewModel(with userBet: UserBet) -> MatchListRowViewModel {
+        matchesFactory.makeMatchListRowViewModel(with: userBet)
+    }
+    
     private func fetchData() {
         Task {
             userBets = try await dependencies.getUserBetsUseCase()
-            userBetsDisplayData = userBets.map(dependencies.transformUserBetUseCase)
             unbetMatchesCount = userBets.filter { $0.isBet }.count
         }
     }
