@@ -36,6 +36,8 @@
 		6F8AC6912BE5961D00C7CBC2 /* Apollo in Frameworks */ = {isa = PBXBuildFile; productRef = 6F8AC6902BE5961D00C7CBC2 /* Apollo */; };
 		6FC413762BF171BA00E1E9A5 /* UserBet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FC413752BF171BA00E1E9A5 /* UserBet.swift */; };
 		6FC4137A2BF426A800E1E9A5 /* AuthorizationData.graphql.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FC413792BF426A800E1E9A5 /* AuthorizationData.graphql.swift */; };
+		6FD4D7572D06367400831FDA /* MatchesFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FD4D7562D06366D00831FDA /* MatchesFactory.swift */; };
+		6FD4D7592D0636A100831FDA /* MatchListRowUseCaseProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FD4D7582D06369A00831FDA /* MatchListRowUseCaseProvider.swift */; };
 		6FE798022BE8069700E94108 /* User.graphql.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FE797F52BE8069700E94108 /* User.graphql.swift */; };
 		6FE798032BE8069700E94108 /* SchemaConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FE797F72BE8069700E94108 /* SchemaConfiguration.swift */; };
 		6FE798042BE8069700E94108 /* SchemaMetadata.graphql.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FE797F82BE8069700E94108 /* SchemaMetadata.graphql.swift */; };
@@ -126,6 +128,8 @@
 		6F8AC68C2BE5901300C7CBC2 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		6FC413752BF171BA00E1E9A5 /* UserBet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserBet.swift; sourceTree = "<group>"; };
 		6FC413792BF426A800E1E9A5 /* AuthorizationData.graphql.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthorizationData.graphql.swift; sourceTree = "<group>"; };
+		6FD4D7562D06366D00831FDA /* MatchesFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchesFactory.swift; sourceTree = "<group>"; };
+		6FD4D7582D06369A00831FDA /* MatchListRowUseCaseProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchListRowUseCaseProvider.swift; sourceTree = "<group>"; };
 		6FE797F52BE8069700E94108 /* User.graphql.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.graphql.swift; sourceTree = "<group>"; };
 		6FE797F72BE8069700E94108 /* SchemaConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SchemaConfiguration.swift; sourceTree = "<group>"; };
 		6FE797F82BE8069700E94108 /* SchemaMetadata.graphql.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SchemaMetadata.graphql.swift; sourceTree = "<group>"; };
@@ -204,10 +208,11 @@
 		6F14D9992D05F2260009F119 /* MatchListRow */ = {
 			isa = PBXGroup;
 			children = (
-				6F14D99A2D05F2310009F119 /* BetEditView.swift */,
-				6F14D9972D05F21B0009F119 /* MatchListRowViewModel.swift */,
-				6F14D9952D038FA80009F119 /* MatchListRowDisplayData.swift */,
+				6FD4D75C2D0636C200831FDA /* BetEdit */,
 				6F14D9912D02304F0009F119 /* MatchListRow.swift */,
+				6F14D9952D038FA80009F119 /* MatchListRowDisplayData.swift */,
+				6FD4D7582D06369A00831FDA /* MatchListRowUseCaseProvider.swift */,
+				6F14D9972D05F21B0009F119 /* MatchListRowViewModel.swift */,
 			);
 			path = MatchListRow;
 			sourceTree = "<group>";
@@ -293,6 +298,14 @@
 				6FC413752BF171BA00E1E9A5 /* UserBet.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		6FD4D75C2D0636C200831FDA /* BetEdit */ = {
+			isa = PBXGroup;
+			children = (
+				6F14D99A2D05F2310009F119 /* BetEditView.swift */,
+			);
+			path = BetEdit;
 			sourceTree = "<group>";
 		};
 		6FE797F02BE6C2CA00E94108 /* Frameworks */ = {
@@ -455,6 +468,7 @@
 			isa = PBXGroup;
 			children = (
 				6F14D9992D05F2260009F119 /* MatchListRow */,
+				6FD4D7562D06366D00831FDA /* MatchesFactory.swift */,
 				6F14D98A2CFFC8550009F119 /* MatchesUseCaseProvider.swift */,
 				6F14D9882CFFA4CF0009F119 /* MatchesService.swift */,
 				6FE798422BEC2D2800E94108 /* MatchesView.swift */,
@@ -646,6 +660,8 @@
 				6FE7986C2BED5A8C00E94108 /* BetInput.graphql.swift in Sources */,
 				6F532B632C21ABC000BEC529 /* UpdateUserPasswordMutation.graphql.swift in Sources */,
 				6FE798522BEC4C9900E94108 /* MatchInput.graphql.swift in Sources */,
+				6FD4D7592D0636A100831FDA /* MatchListRowUseCaseProvider.swift in Sources */,
+				6FD4D7572D06367400831FDA /* MatchesFactory.swift in Sources */,
 				6F8AC6612BE588D100C7CBC2 /* RootView.swift in Sources */,
 				6FE798662BED594A00E94108 /* BetsViewModel.swift in Sources */,
 				6FE7981F2BE983F300E94108 /* CreateUserMutation.graphql.swift in Sources */,
