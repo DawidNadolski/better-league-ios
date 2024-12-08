@@ -7,11 +7,20 @@
 
 import Foundation
 
-struct UserBet: Identifiable {
+@Observable class UserBet: Identifiable, Equatable {
+    static func == (lhs: UserBet, rhs: UserBet) -> Bool {
+        lhs.id == rhs.id
+    }
+    
     var id: String { bet?.id ?? match.id }
     
     let match: Match
-    let bet: Bet?
+    var bet: Bet?
+    
+    init(match: Match, bet: Bet? = nil) {
+        self.match = match
+        self.bet = bet
+    }
     
     var isBet: Bool {
         bet != nil
