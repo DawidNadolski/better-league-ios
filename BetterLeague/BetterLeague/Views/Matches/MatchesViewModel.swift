@@ -13,6 +13,13 @@ import SwiftUI
         let getUserBetsUseCase: () async throws -> [UserBet]
     }
     
+    enum DisplayState {
+        case content
+        case error(Error)
+        case loading
+    }
+    
+    var displayState: DisplayState = .loading
     var unbetMatchesCount: Int = 0
     var userBets = [UserBet]()
     
@@ -33,9 +40,17 @@ import SwiftUI
     }
     
     private func fetchData() {
+        displayState = .loading
         Task {
-            userBets = try await dependencies.getUserBetsUseCase()
-            unbetMatchesCount = userBets.filter { $0.isBet }.count
+            do {
+                userBets = try await dependencies.getUserBetsUseCase()
+                unbetMatchesCount = userBets.filter { $0.isBet }.count
+                displayState = .content
+            } catch(let error) {
+                //TODO: Add proper error handling
+                displayState = .error(error)
+                print(error.localizedDescription)
+            }
         }
     }
 }
