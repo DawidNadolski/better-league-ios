@@ -36,6 +36,9 @@ struct MatchesView: View {
                     MatchListRow(viewModel: viewModel.makeMatchListRowViewModel(with: userBet))
                 }
             }
+            .refreshable {
+                viewModel.onRefresh()
+            }
         }
     }
     

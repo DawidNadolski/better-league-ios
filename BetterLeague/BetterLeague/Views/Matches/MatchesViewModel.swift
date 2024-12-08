@@ -35,6 +35,10 @@ import SwiftUI
         fetchData()
     }
     
+    func onRefresh() {
+        fetchData()
+    }
+    
     func makeMatchListRowViewModel(with userBet: UserBet) -> MatchListRowViewModel {
         matchesFactory.makeMatchListRowViewModel(with: userBet)
     }
