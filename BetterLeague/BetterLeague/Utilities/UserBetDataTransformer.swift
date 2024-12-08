@@ -1,5 +1,5 @@
 //
-//  UserBetDisplayDataTransformer.swift
+//  UserBetDataTransformer.swift
 //  BetterLeague
 //
 //  Created by Dawid Nadolski on 04/12/2024.
@@ -7,13 +7,13 @@
 
 import Foundation
 
-struct UserBetDisplayDataTransformer {
+struct UserBetDataTransformer {
     func transform(_ userBet: UserBet) -> MatchListRowDisplayData {
-        guard let bet = userBet.bet else {
-            return transformUnbetMatch(userBet)
-        }
         let state = getState(userBet)
         let timeStatus = getTimeStatus(userBet)
+        guard let bet = userBet.bet else {
+            return transformUnbetMatch(userBet, timeStatus: timeStatus, state: state)
+        }
         
         return MatchListRowDisplayData(
             id: userBet.match.id,
@@ -29,16 +29,15 @@ struct UserBetDisplayDataTransformer {
         )
     }
     
-    private func transformUnbetMatch(_ userBet: UserBet) -> MatchListRowDisplayData {
-        let timeStatus = getTimeStatus(userBet)
+    private func transformUnbetMatch(_ userBet: UserBet, timeStatus: String, state: MatchListRowDisplayData.State) -> MatchListRowDisplayData {
         return MatchListRowDisplayData(
             id: userBet.match.id,
             matchTimeStatus: timeStatus,
             homeTeamName: userBet.match.homeTeam.name,
-            homeTeamGoals: "\(userBet.match.score.homeTeamGoals)",
+            homeTeamGoals: state == .upcoming ? "-" :  "\(userBet.match.score.homeTeamGoals)",
             betHomeTeamGoals: "-",
             awayTeamName: userBet.match.awayTeam.name,
-            awayTeamGoals: "\(userBet.match.score.awayTeamGoals)",
+            awayTeamGoals: state == .upcoming ? "-" :  "\(userBet.match.score.awayTeamGoals)",
             betAwayTeamGoals: "-",
             isBet: userBet.isBet,
             state: getState(userBet)
