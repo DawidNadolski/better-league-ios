@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct MatchListRow: View {
-    @Bindable var viewModel: MatchListRowViewModel
+    var viewModel: MatchListRowViewModel
     @State private var isBetEditorPresented: Bool = false
         
     var body: some View {
@@ -23,7 +23,7 @@ struct MatchListRow: View {
         .listRowSeparator(.hidden)
         .listRowInsets(EdgeInsets())
         .sheet(isPresented: $isBetEditorPresented) {
-            BetEditView(userBet: viewModel.userBet)
+            BetEditView(viewModel: viewModel.makeBetEditViewModel())
                 .presentationDetents([.medium])
                 .presentationDragIndicator(.visible)
         }

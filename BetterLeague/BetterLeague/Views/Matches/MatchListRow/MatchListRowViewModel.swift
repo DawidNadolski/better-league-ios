@@ -17,10 +17,12 @@ import Foundation
     var userBet: UserBet
     
     private let dependencies: Dependencies
+    private let factory: MatchListRowFactoryProtocol
     
-    init(userBet: UserBet, dependencies: Dependencies) {
+    init(userBet: UserBet, dependencies: Dependencies, factory: MatchListRowFactoryProtocol = MatchListRowFactory()) {
         self.userBet = userBet
         self.dependencies = dependencies
+        self.factory = factory
         self.displayData = dependencies.getDisplayData(userBet)
     }
     

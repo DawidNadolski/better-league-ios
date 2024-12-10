@@ -8,42 +8,54 @@
 import SwiftUI
 
 struct BetEditView: View {
-    @Bindable var userBet: UserBet
+    @State var viewModel: BetEditViewModel
     @Environment(\.dismiss) private var dismiss
-    @State private var homeTeamGoals: Int = 0
-    @State private var awayTeamGoals: Int = 0
     
     var body: some View {
+        Group {
+            switch viewModel.displayState {
+            case .content:
+                contentView
+            case .error(let error):
+                makeErrorView(with: error)
+            case .loading:
+                loadingView
+            }
+        }
+        .onChange(of: viewModel.shouldDismissDrawer) {
+            dismiss()
+        }
+    }
+    
+    @ViewBuilder private var contentView: some View {
         VStack {
             scorePickers
             Spacer()
             submitButton
         }
         .padding()
-        .onAppear {
-            homeTeamGoals = userBet.bet?.score.homeTeamGoals ?? 0
-            awayTeamGoals = userBet.bet?.score.awayTeamGoals ?? 0
-        }
     }
     
-    @ViewBuilder
-    private var scorePickers: some View {
+    @ViewBuilder private var scorePickers: some View {
         HStack(alignment: .top) {
             VStack(alignment: .center, spacing: 0.0) {
-                Text(userBet.match.homeTeam.name)
-                Picker("\(homeTeamGoals)", selection: $homeTeamGoals) {
-                    ForEach(0..<11) { goal in
-                        Text("\(goal)")
+                Text(viewModel.homeTeamName)
+                    .font(.title2)
+                Picker("\(viewModel.homeTeamGoals)", selection: $viewModel.homeTeamGoals) {
+                    ForEach(0..<11) { goalsCount in
+                        Text("\(goalsCount)")
                     }
                 }
                 .pickerStyle(.wheel)
             }
             Text("-")
+                .font(.title2)
             VStack(alignment: .center, spacing: 0.0) {
-                Text(userBet.match.awayTeam.name)
-                Picker("\(awayTeamGoals)", selection: $awayTeamGoals) {
-                    ForEach(0..<11) { goal in
-                        Text("\(goal)")
+                Text(viewModel.awayTeamName)
+                    .font(.title2)
+                Picker("\(viewModel.awayTeamGoals)", selection: $viewModel.awayTeamGoals) {
+                    ForEach(0..<11) { goalsCount in
+                        Text("\(goalsCount)")
                     }
                 }
                 .pickerStyle(.wheel)
@@ -52,20 +64,11 @@ struct BetEditView: View {
         .padding(.top, 48.0)
     }
     
-    @ViewBuilder
-    private var submitButton: some View {
+    @ViewBuilder private var submitButton: some View {
         Button {
-            //TODO: Actually send the bet to the service
-            let bet = Bet(
-                id: UUID().uuidString,
-                matchId: userBet.match.id,
-                score: .init(
-                    homeTeamGoals: homeTeamGoals,
-                    awayTeamGoals: awayTeamGoals
-                )
-            )
-            userBet.bet = bet
-            dismiss()
+            Task {
+                await viewModel.submitBet()
+            }
         } label: {
             Text("Submit")
                 .bold()
@@ -76,8 +79,20 @@ struct BetEditView: View {
                 .clipShape(Capsule())
         }
     }
-}
-
-#Preview {
-    BetEditView(userBet: .init(match: .init(id: "1", homeTeam: .init(id: "1", name: "Poland"), awayTeam: .init(id: "2", name: "Germany"), score: .init(homeTeamGoals: 0, awayTeamGoals: 0), startDate: Date(), hasEnded: false)))
+    
+    @ViewBuilder private var loadingView: some View {
+        ProgressView("Placing bet")
+    }
+    
+    @ViewBuilder private func makeErrorView(with error: Error) -> some View {
+        VStack(spacing: 16.0) {
+            Text(error.localizedDescription)
+            Button {
+                viewModel.onRetry()
+            } label: {
+                Text("Retry")
+                    .underline()
+            }
+        }
+    }
 }
