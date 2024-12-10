@@ -30,13 +30,9 @@ struct MatchListRow: View {
         .onAppear {
             viewModel.onAppear()
         }
-        .onChange(of: viewModel.userBet) {
-            viewModel.onUserBetChange()
-        }
     }
     
-    @ViewBuilder
-    private var matchTimeStatus: some View {
+    @ViewBuilder private var matchTimeStatus: some View {
         ZStack {
             Color.black.opacity(0.1)
             Text(viewModel.displayData.matchTimeStatus)
@@ -45,8 +41,7 @@ struct MatchListRow: View {
         .frame(width: 64.0)
     }
     
-    @ViewBuilder
-    private var matchResultScore: some View {
+    @ViewBuilder private var matchResultScore: some View {
         ZStack {
             Color.black.opacity(0.1)
             VStack(alignment: .center, spacing: 2.0) {
@@ -59,8 +54,7 @@ struct MatchListRow: View {
         .frame(width: 32.0)
     }
     
-    @ViewBuilder
-    private var userBetScore: some View {
+    @ViewBuilder private var userBetScore: some View {
         ZStack {
             viewModel.displayData.betColor
             VStack(alignment: .center, spacing: 2.0) {
@@ -73,8 +67,7 @@ struct MatchListRow: View {
         .frame(width: 32.0)
     }
     
-    @ViewBuilder
-    private var matchTeams: some View {
+    @ViewBuilder private var matchTeams: some View {
         ZStack {
             Color.black.opacity(0.1)
             VStack(alignment: .center, spacing: 2.0) {
@@ -91,9 +84,7 @@ struct MatchListRow: View {
         }
     }
     
-    //TODO: Add button action
-    @ViewBuilder
-    private var button: some View {
+    @ViewBuilder private var button: some View {
         ZStack {
             Color.black.opacity(0.1)
             Button {

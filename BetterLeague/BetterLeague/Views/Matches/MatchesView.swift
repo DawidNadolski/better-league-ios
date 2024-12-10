@@ -28,8 +28,7 @@ struct MatchesView: View {
         .navigationBarTitleDisplayMode(.inline)
     }
     
-    @ViewBuilder
-    private var contentView: some View {
+    @ViewBuilder private var contentView: some View {
         VStack(spacing: 16.0) {
             List {
                 ForEach(viewModel.userBets) { userBet in
@@ -42,12 +41,11 @@ struct MatchesView: View {
         }
     }
     
-    @ViewBuilder var loadingView: some View {
+    @ViewBuilder private var loadingView: some View {
         ProgressView("Loading matches")
     }
     
-    @ViewBuilder
-    private func makeErrorView(with error: Error) -> some View {
+    @ViewBuilder private func makeErrorView(with error: Error) -> some View {
         Text(error.localizedDescription)
     }
 }
