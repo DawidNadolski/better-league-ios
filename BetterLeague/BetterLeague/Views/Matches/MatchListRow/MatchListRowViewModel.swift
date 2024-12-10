@@ -33,4 +33,8 @@ import Foundation
     func onUserBetChange() {
         displayData = dependencies.getDisplayData(userBet)
     }
+    
+    func makeBetEditViewModel() -> BetEditViewModel {
+        factory.makeBetEditViewModel(userBet: userBet)
+    }
 }

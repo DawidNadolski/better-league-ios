@@ -10,6 +10,7 @@ import Foundation
 protocol MatchesServiceProtocol {
     func fetchMatches() async throws -> [Match]
     func fetchUserBets() async throws -> [Bet]
+    func placeBet(with input: PlaceBetInput) async throws -> String
 }
 
 final class MatchesService: MatchesServiceProtocol {
@@ -40,5 +41,14 @@ final class MatchesService: MatchesServiceProtocol {
     func fetchUserBets() async throws -> [Bet] {
         //TODO: Fetch bets of logged user
         []
+    }
+    
+    func placeBet(with input: PlaceBetInput) async throws -> String {
+        let mutation = BetterLeagueAPI.PlaceBetMutation(input: input)
+        let response = try await client.perform(mutation: mutation)
+        guard let data = response.data else {
+            return UUID().uuidString
+        }
+        return data.placeBet.id
     }
 }
