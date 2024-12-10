@@ -12,7 +12,7 @@ import Foundation
         lhs.id == rhs.id
     }
     
-    var id: String { bet?.id ?? match.id }
+    var id: String { match.id }
     
     let match: Match
     var bet: Bet?

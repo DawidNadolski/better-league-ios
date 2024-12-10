@@ -15,6 +15,10 @@ protocol GraphQLClientProtocol {
     func perform<Mutation>(mutation: Mutation) async throws -> GraphQLResult<Mutation.Data> where Mutation : GraphQLMutation
 }
 
+enum GraphQLError: Error {
+    case emptyResponse
+}
+
 final class GraphQLClient: GraphQLClientProtocol {
     
     private let apolloClient = ApolloClient(url: URL(string: "https://better-league-service.onrender.com/graphql")!)

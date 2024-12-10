@@ -11,3 +11,5 @@ typealias GraphQLCreateUserResponseData = BetterLeagueAPI.CreateUserMutation.Dat
 typealias GraphQLLoginResponseData = BetterLeagueAPI.LogInQuery.Data
 typealias GraphQLGetMatchesResponseData = BetterLeagueAPI.GetMatchesQuery.Data.Match
 typealias GraphQLCreateMatchResponseData = BetterLeagueAPI.CreateMatchMutation.Data
+
+typealias PlaceBetInput = BetterLeagueAPI.BetInput
