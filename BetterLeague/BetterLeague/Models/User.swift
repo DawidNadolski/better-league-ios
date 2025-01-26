@@ -20,9 +20,4 @@ extension User {
         self.bets = data.createUser.bets?.compactMap { _ in "" } ?? []
         self.name = data.createUser.name
     }
-    
-    init?(responseData: GraphQLLoginResponseData?) {
-        guard let data = responseData else { return nil }
-        return nil
-    }
 }

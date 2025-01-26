@@ -51,7 +51,7 @@ extension Match {
         self.score = .init(homeTeamGoals: data.homeTeamGoals, awayTeamGoals: data.awayTeamGoals)
         //TODO: Get date from string
         self.startDate = Date()
-        self.hasEnded = data.hasEnded ?? false
+        self.hasEnded = data.hasEnded
     }
     
     init?(responseData: GraphQLCreateMatchResponseData?) {

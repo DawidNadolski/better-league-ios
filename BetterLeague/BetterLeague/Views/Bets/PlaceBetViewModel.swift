@@ -19,11 +19,11 @@ final class PlaceBetViewModel: ObservableObject {
             switch result {
             case .success(let graphQLResponse):
                 print(graphQLResponse)
-                guard let data = graphQLResponse.data else {
+                guard let _ = graphQLResponse.data else {
                     print("Something went wrong")
                     return
                 }
-            case .failure(let error):
+            case .failure:
                 return
             }
         }
