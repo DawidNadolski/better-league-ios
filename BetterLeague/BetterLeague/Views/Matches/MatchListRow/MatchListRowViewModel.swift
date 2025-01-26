@@ -15,6 +15,8 @@ import Foundation
     
     var displayData: MatchListRowDisplayData
     var userBet: UserBet
+    var isBetEditorPresented: Bool = false
+    var isBetsListPresented: Bool = false
     
     private let dependencies: Dependencies
     private let factory: MatchListRowFactoryProtocol
@@ -32,6 +34,15 @@ import Foundation
     
     func onUserBetChange() {
         displayData = dependencies.getDisplayData(userBet)
+    }
+    
+    func onButtonTapped() {
+        switch displayData.state {
+        case .upcoming:
+            isBetEditorPresented = true
+        case .live, .ended:
+            isBetsListPresented = true
+        }
     }
     
     func makeBetEditViewModel() -> BetEditViewModel {

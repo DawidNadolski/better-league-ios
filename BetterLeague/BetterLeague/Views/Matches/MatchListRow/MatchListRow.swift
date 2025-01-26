@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct MatchListRow: View {
-    var viewModel: MatchListRowViewModel
+    @State var viewModel: MatchListRowViewModel
     @State private var isBetEditorPresented: Bool = false
         
     var body: some View {
@@ -22,10 +22,13 @@ struct MatchListRow: View {
         .frame(height: 64.0)
         .listRowSeparator(.hidden)
         .listRowInsets(EdgeInsets())
-        .sheet(isPresented: $isBetEditorPresented) {
+        .sheet(isPresented: $viewModel.isBetEditorPresented) {
             BetEditView(viewModel: viewModel.makeBetEditViewModel())
                 .presentationDetents([.medium])
                 .presentationDragIndicator(.visible)
+        }
+        .sheet(isPresented: $viewModel.isBetsListPresented) {
+            Text(viewModel.userBet.match.homeTeam.name)
         }
         .onAppear {
             viewModel.onAppear()
@@ -88,7 +91,7 @@ struct MatchListRow: View {
         ZStack {
             Color.black.opacity(0.1)
             Button {
-                isBetEditorPresented = true
+                viewModel.onButtonTapped()
             } label: {
                 Text(viewModel.displayData.betButtonTitle)
                     .font(.callout)
