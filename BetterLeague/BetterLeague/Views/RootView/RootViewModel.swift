@@ -10,11 +10,13 @@ import Foundation
 @Observable final class RootViewModel {
     
     var matchesViewModel: MatchesViewModel
+    var rankingViewModel: RankingViewModel
     
     private let rootFactory: RootFactoryProtocol
     
     init(rootFactory: RootFactoryProtocol = RootFactory()) {
         self.rootFactory = rootFactory
         self.matchesViewModel = rootFactory.makeMatchesViewModel()
+        self.rankingViewModel = rootFactory.makeRankingViewModel()
     }
 }

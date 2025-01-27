@@ -22,7 +22,10 @@ struct RootView: View {
             .badge(viewModel.matchesViewModel.unbetMatchesCount)
             
             Tab("Ranking", systemImage: "list.number") {
-                EmptyView()
+                NavigationView {
+                    RankingView()
+                        .environment(viewModel.rankingViewModel)
+                }
             }
             
             Tab("Profile", systemImage: "person") {

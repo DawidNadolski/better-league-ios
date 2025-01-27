@@ -7,20 +7,34 @@
 
 protocol RootFactoryProtocol {
     func makeMatchesViewModel() -> MatchesViewModel
+    func makeRankingViewModel() -> RankingViewModel
 }
 
 final class RootFactory: RootFactoryProtocol {
     
     private let matchesUseCaseProvider: MatchesUseCaseProviderProtocol
+    private let rankingUseCaseProvider: RankingUseCaseProviderProtocol
     
-    init(matchesUseCaseProvider: MatchesUseCaseProviderProtocol = MatchesUseCaseProvider()) {
+    init(
+        matchesUseCaseProvider: MatchesUseCaseProviderProtocol = MatchesUseCaseProvider(),
+        rankingUseCaseProvider: RankingUseCaseProviderProtocol = RankingUseCaseProvider()
+    ) {
         self.matchesUseCaseProvider = matchesUseCaseProvider
+        self.rankingUseCaseProvider = rankingUseCaseProvider
     }
     
     func makeMatchesViewModel() -> MatchesViewModel {
         MatchesViewModel(
             dependencies: .init(
                 getUserBetsUseCase: matchesUseCaseProvider.getUserBetsUseCase
+            )
+        )
+    }
+    
+    func makeRankingViewModel() -> RankingViewModel {
+        RankingViewModel(
+            dependencies: .init(
+                getDisplatData: rankingUseCaseProvider.getRankingDisplayData
             )
         )
     }
