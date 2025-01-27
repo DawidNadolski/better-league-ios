@@ -8,7 +8,7 @@ extension BetterLeagueAPI {
     static let operationName: String = "GetUsers"
     static let operationDocument: ApolloAPI.OperationDocument = .init(
       definition: .init(
-        #"query GetUsers { users { __typename id name bets { __typename id match { __typename homeTeam { __typename name } awayTeam { __typename name } } homeTeamGoals awayTeamGoals } winningTeam { __typename id name } } }"#
+        #"query GetUsers { users { __typename id name bets { __typename id match { __typename id homeTeamGoals homeTeam { __typename id name } awayTeamGoals awayTeam { __typename id name } } isResolved points homeTeamGoals awayTeamGoals } winningTeam { __typename id name } } }"#
       ))
 
     public init() {}
@@ -57,12 +57,16 @@ extension BetterLeagueAPI {
             .field("__typename", String.self),
             .field("id", BetterLeagueAPI.ID.self),
             .field("match", Match.self),
+            .field("isResolved", Bool.self),
+            .field("points", Int.self),
             .field("homeTeamGoals", Int.self),
             .field("awayTeamGoals", Int.self),
           ] }
 
           var id: BetterLeagueAPI.ID { __data["id"] }
           var match: Match { __data["match"] }
+          var isResolved: Bool { __data["isResolved"] }
+          var points: Int { __data["points"] }
           var homeTeamGoals: Int { __data["homeTeamGoals"] }
           var awayTeamGoals: Int { __data["awayTeamGoals"] }
 
@@ -76,11 +80,17 @@ extension BetterLeagueAPI {
             static var __parentType: ApolloAPI.ParentType { BetterLeagueAPI.Objects.Match }
             static var __selections: [ApolloAPI.Selection] { [
               .field("__typename", String.self),
+              .field("id", BetterLeagueAPI.ID.self),
+              .field("homeTeamGoals", Int.self),
               .field("homeTeam", HomeTeam.self),
+              .field("awayTeamGoals", Int.self),
               .field("awayTeam", AwayTeam.self),
             ] }
 
+            var id: BetterLeagueAPI.ID { __data["id"] }
+            var homeTeamGoals: Int { __data["homeTeamGoals"] }
             var homeTeam: HomeTeam { __data["homeTeam"] }
+            var awayTeamGoals: Int { __data["awayTeamGoals"] }
             var awayTeam: AwayTeam { __data["awayTeam"] }
 
             /// User.Bet.Match.HomeTeam
@@ -93,9 +103,11 @@ extension BetterLeagueAPI {
               static var __parentType: ApolloAPI.ParentType { BetterLeagueAPI.Objects.Team }
               static var __selections: [ApolloAPI.Selection] { [
                 .field("__typename", String.self),
+                .field("id", BetterLeagueAPI.ID.self),
                 .field("name", String.self),
               ] }
 
+              var id: BetterLeagueAPI.ID { __data["id"] }
               var name: String { __data["name"] }
             }
 
@@ -109,9 +121,11 @@ extension BetterLeagueAPI {
               static var __parentType: ApolloAPI.ParentType { BetterLeagueAPI.Objects.Team }
               static var __selections: [ApolloAPI.Selection] { [
                 .field("__typename", String.self),
+                .field("id", BetterLeagueAPI.ID.self),
                 .field("name", String.self),
               ] }
 
+              var id: BetterLeagueAPI.ID { __data["id"] }
               var name: String { __data["name"] }
             }
           }

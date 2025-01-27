@@ -5,13 +5,20 @@ query GetUsers {
         bets {
             id
             match {
+                id
+                homeTeamGoals
                 homeTeam {
+                    id
                     name
                 }
+                awayTeamGoals
                 awayTeam {
+                    id
                     name
                 }
             }
+            isResolved
+            points
             homeTeamGoals
             awayTeamGoals
         }
