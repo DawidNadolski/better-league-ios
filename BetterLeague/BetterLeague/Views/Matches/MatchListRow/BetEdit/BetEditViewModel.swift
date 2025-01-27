@@ -52,7 +52,8 @@ final class BetEditViewModel {
                 awayTeamGoals: awayTeamGoals
             )
             let betId = try await dependencies.placeBetUseCase(betInput)
-            userBet.bet = Bet(id: betId, matchId: userBet.match.id, score: .init(homeTeamGoals: homeTeamGoals, awayTeamGoals: awayTeamGoals))
+            //TODO: Replace Bet with SubmitBetInput or sth like that
+            userBet.bet = Bet(id: betId, matchId: userBet.match.id, score: .init(homeTeamGoals: homeTeamGoals, awayTeamGoals: awayTeamGoals), isResolved: userBet.bet?.isResolved ?? false, points: userBet.bet?.points)
             shouldDismissDrawer = true
         } catch (let error) {
             print("BetEditViewModel: \(error.localizedDescription)")

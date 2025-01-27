@@ -126,7 +126,9 @@ struct MatchListRow: View {
                 score: .init(
                     homeTeamGoals: 0,
                     awayTeamGoals: 0
-                )
+                ),
+                isResolved: true,
+                points: nil
             )
         ),
         dependencies: .init(getDisplayData: { userBet in UserBetDataTransformer().transform(userBet) }))
@@ -159,7 +161,9 @@ struct MatchListRow: View {
                 score: .init(
                     homeTeamGoals: 1,
                     awayTeamGoals: 1
-                )
+                ),
+                isResolved: true,
+                points: nil
             )
         ),
         dependencies: .init(getDisplayData: { userBet in UserBetDataTransformer().transform(userBet) }))
@@ -192,7 +196,9 @@ struct MatchListRow: View {
                 score: .init(
                     homeTeamGoals: 2,
                     awayTeamGoals: 1
-                )
+                ),
+                isResolved: true,
+                points: nil
             )
         ),
         dependencies: .init(getDisplayData: { userBet in UserBetDataTransformer().transform(userBet) }))
@@ -225,7 +231,9 @@ struct MatchListRow: View {
                 score: .init(
                     homeTeamGoals: 1,
                     awayTeamGoals: 0
-                )
+                ),
+                isResolved: true,
+                points: nil
             )
         ),
         dependencies: .init(getDisplayData: { userBet in UserBetDataTransformer().transform(userBet) }))
@@ -284,7 +292,9 @@ struct MatchListRow: View {
                 score: .init(
                     homeTeamGoals: 1,
                     awayTeamGoals: 1
-                )
+                ),
+                isResolved: true,
+                points: nil
             )
         ),
         dependencies: .init(getDisplayData: { userBet in UserBetDataTransformer().transform(userBet) }))
