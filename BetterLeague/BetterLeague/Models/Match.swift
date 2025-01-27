@@ -42,6 +42,14 @@ struct Team: Hashable {
     let name: String
 }
 
+extension Team {
+    init?(responseData: BetterLeagueAPI.GetUsersQuery.Data.User.WinningTeam?) {
+        guard let responseData else { return nil }
+        self.id = responseData.id
+        self.name = responseData.name
+    }
+}
+
 extension Match {
     init?(responseData: GraphQLGetMatchesResponseData?) {
         guard let data = responseData else { return nil }
@@ -52,6 +60,16 @@ extension Match {
         //TODO: Get date from string
         self.startDate = Date()
         self.hasEnded = data.hasEnded
+    }
+    
+    init?(bet: BetterLeagueAPI.GetUsersQuery.Data.User.Bet?) {
+        guard let bet else { return nil }
+        self.id = bet.id
+        self.homeTeam = Team(id: bet.match.homeTeam.id, name: bet.match.homeTeam.name)
+        self.awayTeam = Team(id: bet.match.awayTeam.id, name: bet.match.awayTeam.name)
+        self.score = .init(homeTeamGoals: bet.homeTeamGoals, awayTeamGoals: bet.awayTeamGoals)
+        self.startDate = Date()
+        self.hasEnded = false
     }
     
     init?(responseData: GraphQLCreateMatchResponseData?) {
