@@ -11,4 +11,6 @@ struct Bet {
     let id: String
     let matchId: String
     let score: Score
+    let isResolved: Bool
+    let points: Int?
 }

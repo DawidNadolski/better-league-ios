@@ -10,14 +10,23 @@ import Foundation
 struct User {
     let id: String
     let name: String
-    let bets: [String]
+    let bets: [Bet]
+    let winningTeam: Team?
+    
+    init(id: String, name: String, bets: [Bet] = [], winningTeam: Team?) {
+        self.id = id
+        self.name = name
+        self.bets = bets
+        self.winningTeam = winningTeam
+    }
 }
 
 extension User {
     init?(responseData: GraphQLCreateUserResponseData?) {
         guard let data = responseData else { return nil }
         self.id = data.createUser.id
-        self.bets = data.createUser.bets?.compactMap { _ in "" } ?? []
+        self.bets = []
         self.name = data.createUser.name
+        self.winningTeam = nil
     }
 }
