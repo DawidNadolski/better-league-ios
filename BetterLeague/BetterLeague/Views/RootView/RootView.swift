@@ -9,27 +9,35 @@ import SwiftUI
 
 struct RootView: View {
     
-    let viewModel = RootViewModel()
+    @State var viewModel = RootViewModel()
     
     var body: some View {
-        TabView {
-            Tab("Matches", systemImage: "soccerball") {
-                NavigationView {
-                    MatchesView()
-                        .environment(viewModel.matchesViewModel)
-                }
+        TabView(selection: $viewModel.selectedTab) {
+            Tab("Matches", systemImage: "soccerball", value: .matches) {
+                MatchesView()
+                    .environment(viewModel.matchesViewModel)
             }
             .badge(viewModel.matchesViewModel.unbetMatchesCount)
             
-            Tab("Ranking", systemImage: "list.number") {
-                NavigationView {
-                    RankingView()
-                        .environment(viewModel.rankingViewModel)
-                }
+            Tab("Ranking", systemImage: "list.number", value: .ranking) {
+                RankingView()
+                    .environment(viewModel.rankingViewModel)
             }
             
-            Tab("Profile", systemImage: "person") {
+            Tab("Profile", systemImage: "person", value: .profile) {
                 EmptyView()
+            }
+        }
+        .navigationTitle(viewModel.navigationTitle)
+        .navigationBarTitleDisplayMode(.inline)
+        .toolbar {
+            ToolbarItem(placement: .topBarTrailing) {
+                Button {
+                    //TODO: Show menu
+                    print("Tapped")
+                } label: {
+                    Image(systemName: "ellipsis")
+                }
             }
         }
     }

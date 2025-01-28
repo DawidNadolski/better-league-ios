@@ -36,8 +36,6 @@ struct RankingView: View {
         .onAppear {
             viewModel.onAppear()
         }
-        .navigationTitle("Ranking")
-        .navigationBarTitleDisplayMode(.inline)
     }
 }
 

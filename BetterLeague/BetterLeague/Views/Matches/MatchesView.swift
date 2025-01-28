@@ -24,8 +24,6 @@ struct MatchesView: View {
         .onAppear {
             viewModel.onAppear()
         }
-        .navigationTitle("Matches")
-        .navigationBarTitleDisplayMode(.inline)
     }
     
     @ViewBuilder private var contentView: some View {
